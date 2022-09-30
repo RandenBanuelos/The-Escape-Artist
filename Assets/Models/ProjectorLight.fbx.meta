@@ -1,0 +1,916 @@
+fileFormatVersion: 2
+guid: e57ebf9b74adecd4f89584e437ef98ac
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -159989334429374278
+    second: Stand|angularBolt_low001|Take 001|BaseLayer
+  - first:
+      74: 3334297006050009715
+    second: Stand|angularBolt_low001|Take 001|BaseLayer.001
+  - first:
+      74: 1869112124272740625
+    second: Stand|angularBolt_low002|Take 001|BaseLayer
+  - first:
+      74: 6201738309138974302
+    second: Stand|angularBolt_low002|Take 001|BaseLayer.001
+  - first:
+      74: 5076077178606242796
+    second: Stand|angularBolt_low003|Take 001|BaseLayer
+  - first:
+      74: -5280047021409282708
+    second: Stand|angularBolt_low003|Take 001|BaseLayer.001
+  - first:
+      74: 1233895612705523506
+    second: Stand|angularBolt_low004|Take 001|BaseLayer
+  - first:
+      74: 5228782324147866519
+    second: Stand|angularBolt_low004|Take 001|BaseLayer.001
+  - first:
+      74: -5597449136563425615
+    second: Stand|angularBolt_low005|Take 001|BaseLayer
+  - first:
+      74: 3447348486616898703
+    second: Stand|angularBolt_low005|Take 001|BaseLayer.001
+  - first:
+      74: 5754752034260555912
+    second: Stand|angularBolt_low|Take 001|BaseLayer
+  - first:
+      74: 405975990161036534
+    second: Stand|angularBolt_low|Take 001|BaseLayer.001
+  - first:
+      74: -842851615380750452
+    second: Stand|barrel_fixator_low001|Take 001|BaseLayer
+  - first:
+      74: 4198658464429798224
+    second: Stand|barrel_fixator_low001|Take 001|BaseLayer.001
+  - first:
+      74: -1490868182269929953
+    second: Stand|barrel_fixator_low|Take 001|BaseLayer
+  - first:
+      74: 1957200440004899636
+    second: Stand|barrel_fixator_low|Take 001|BaseLayer.001
+  - first:
+      74: 4159855092865897102
+    second: Stand|barrel_krepej_low001|Take 001|BaseLayer
+  - first:
+      74: 7088576722925917266
+    second: Stand|barrel_krepej_low001|Take 001|BaseLayer.001
+  - first:
+      74: -3308913013885593289
+    second: Stand|barrel_krepej_low|Take 001|BaseLayer
+  - first:
+      74: 2690013294703609725
+    second: Stand|barrel_krepej_low|Take 001|BaseLayer.001
+  - first:
+      74: -664955906979752285
+    second: Stand|barrel_low|Take 001|BaseLayer
+  - first:
+      74: 6098894320943089047
+    second: Stand|barrel_low|Take 001|BaseLayer.001
+  - first:
+      74: -9171319924582622601
+    second: Stand|barrel_provodBind_low|Take 001|BaseLayer
+  - first:
+      74: 176881363159502442
+    second: Stand|barrel_provodBind_low|Take 001|BaseLayer.001
+  - first:
+      74: 4526909123341090426
+    second: Stand|duga_low|Take 001|BaseLayer
+  - first:
+      74: 1566639438810742801
+    second: Stand|duga_low|Take 001|BaseLayer.001
+  - first:
+      74: -3465714836944970516
+    second: Stand|frame_low|Take 001|BaseLayer
+  - first:
+      74: 2087212429048215217
+    second: Stand|frame_low|Take 001|BaseLayer.001
+  - first:
+      74: 3602241236595970680
+    second: Stand|frame_vint_low001|Take 001|BaseLayer
+  - first:
+      74: 4705163541819125500
+    second: Stand|frame_vint_low001|Take 001|BaseLayer.001
+  - first:
+      74: 8279716091353593937
+    second: Stand|frame_vint_low002|Take 001|BaseLayer
+  - first:
+      74: -8513911535242745040
+    second: Stand|frame_vint_low002|Take 001|BaseLayer.001
+  - first:
+      74: 2325240459189194197
+    second: Stand|frame_vint_low|Take 001|BaseLayer
+  - first:
+      74: -1384788692530283946
+    second: Stand|frame_vint_low|Take 001|BaseLayer.001
+  - first:
+      74: -2846072738166763173
+    second: Stand|glass_low|Take 001|BaseLayer
+  - first:
+      74: 8947924593477040808
+    second: Stand|glass_low|Take 001|BaseLayer.001
+  - first:
+      74: 1353888182607674132
+    second: Stand|light_base_low|Take 001|BaseLayer
+  - first:
+      74: -9011822551458227696
+    second: Stand|light_base_low|Take 001|BaseLayer.001
+  - first:
+      74: 1910875405296222683
+    second: Stand|light_glass_low|Take 001|BaseLayer
+  - first:
+      74: 2414016966640668033
+    second: Stand|light_glass_low|Take 001|BaseLayer.001
+  - first:
+      74: -8579550637464989361
+    second: Stand|light_nitka|Take 001|BaseLayer
+  - first:
+      74: 3161241501428090530
+    second: Stand|light_nitka|Take 001|BaseLayer.001
+  - first:
+      74: 7955773401938599318
+    second: Stand|noga_binding_bottom_low001|Take 001|BaseLayer
+  - first:
+      74: -1972986129750820677
+    second: Stand|noga_binding_bottom_low001|Take 001|BaseLayer.001
+  - first:
+      74: 8092966083543288699
+    second: Stand|noga_binding_bottom_low002|Take 001|BaseLayer
+  - first:
+      74: 8053707176229394022
+    second: Stand|noga_binding_bottom_low002|Take 001|BaseLayer.001
+  - first:
+      74: -1828579723043888283
+    second: Stand|noga_binding_bottom_low|Take 001|BaseLayer
+  - first:
+      74: 6530173405492457342
+    second: Stand|noga_binding_bottom_low|Take 001|BaseLayer.001
+  - first:
+      74: -5902519807434730294
+    second: Stand|noga_binding_up_low001|Take 001|BaseLayer
+  - first:
+      74: -2587467988879578399
+    second: Stand|noga_binding_up_low001|Take 001|BaseLayer.001
+  - first:
+      74: 2844070691642635152
+    second: Stand|noga_binding_up_low002|Take 001|BaseLayer
+  - first:
+      74: -8241205263601368863
+    second: Stand|noga_binding_up_low002|Take 001|BaseLayer.001
+  - first:
+      74: -3432859778451577289
+    second: Stand|noga_binding_up_low|Take 001|BaseLayer
+  - first:
+      74: 1125746593640191521
+    second: Stand|noga_binding_up_low|Take 001|BaseLayer.001
+  - first:
+      74: -4824377357614943653
+    second: Stand|noga_low001|Take 001|BaseLayer
+  - first:
+      74: 9011362451026895727
+    second: Stand|noga_low001|Take 001|BaseLayer.001
+  - first:
+      74: 6251683421225784941
+    second: Stand|noga_low002|Take 001|BaseLayer
+  - first:
+      74: 2406460511541937058
+    second: Stand|noga_low002|Take 001|BaseLayer.001
+  - first:
+      74: -4997397813028783474
+    second: Stand|noga_low|Take 001|BaseLayer
+  - first:
+      74: -1762904449074860027
+    second: Stand|noga_low|Take 001|BaseLayer.001
+  - first:
+      74: -3647179626092055595
+    second: Stand|noga_slider_fixator_low001|Take 001|BaseLayer
+  - first:
+      74: -4380740444543802978
+    second: Stand|noga_slider_fixator_low001|Take 001|BaseLayer.001
+  - first:
+      74: 5602417173332837579
+    second: Stand|noga_slider_fixator_low002|Take 001|BaseLayer
+  - first:
+      74: 3165183409130968673
+    second: Stand|noga_slider_fixator_low002|Take 001|BaseLayer.001
+  - first:
+      74: -4678169690557433624
+    second: Stand|noga_slider_fixator_low|Take 001|BaseLayer
+  - first:
+      74: -737318042727972232
+    second: Stand|noga_slider_fixator_low|Take 001|BaseLayer.001
+  - first:
+      74: 2608871643874383309
+    second: Stand|noga_slider_low001|Take 001|BaseLayer
+  - first:
+      74: -5311273295169402274
+    second: Stand|noga_slider_low001|Take 001|BaseLayer.001
+  - first:
+      74: 3185783705939534543
+    second: Stand|noga_slider_low002|Take 001|BaseLayer
+  - first:
+      74: -7185349235298397826
+    second: Stand|noga_slider_low002|Take 001|BaseLayer.001
+  - first:
+      74: -417171577975583077
+    second: Stand|noga_slider_low|Take 001|BaseLayer
+  - first:
+      74: 6737874440840535631
+    second: Stand|noga_slider_low|Take 001|BaseLayer.001
+  - first:
+      74: 8699436909547361765
+    second: Stand|rasporka_keeper_low001|Take 001|BaseLayer
+  - first:
+      74: 4177728620918075495
+    second: Stand|rasporka_keeper_low001|Take 001|BaseLayer.001
+  - first:
+      74: 5128557509212280246
+    second: Stand|rasporka_keeper_low002|Take 001|BaseLayer
+  - first:
+      74: 5098005986836711223
+    second: Stand|rasporka_keeper_low002|Take 001|BaseLayer.001
+  - first:
+      74: 1917506179746132975
+    second: Stand|rasporka_keeper_low|Take 001|BaseLayer
+  - first:
+      74: -8850016884916780922
+    second: Stand|rasporka_keeper_low|Take 001|BaseLayer.001
+  - first:
+      74: -7281107715817613510
+    second: Stand|rasporka_low001|Take 001|BaseLayer
+  - first:
+      74: 8633676670518875010
+    second: Stand|rasporka_low001|Take 001|BaseLayer.001
+  - first:
+      74: 5484350882469361447
+    second: Stand|rasporka_low002|Take 001|BaseLayer
+  - first:
+      74: 3725658092507562893
+    second: Stand|rasporka_low002|Take 001|BaseLayer.001
+  - first:
+      74: -4020919763320374661
+    second: Stand|rasporka_low|Take 001|BaseLayer
+  - first:
+      74: -2832952854133528828
+    second: Stand|rasporka_low|Take 001|BaseLayer.001
+  - first:
+      74: -1896435857415975057
+    second: Stand|rasporka_zvezda_low|Take 001|BaseLayer
+  - first:
+      74: -7442905766106998422
+    second: Stand|rasporka_zvezda_low|Take 001|BaseLayer.001
+  - first:
+      74: 4807153859588860142
+    second: Stand|ruchka_low|Take 001|BaseLayer
+  - first:
+      74: 4929708727653803194
+    second: Stand|ruchka_low|Take 001|BaseLayer.001
+  - first:
+      74: -8677663085918071682
+    second: Stand|shtativ_base_low|Take 001|BaseLayer
+  - first:
+      74: -8579162120747784435
+    second: Stand|shtativ_base_low|Take 001|BaseLayer.001
+  - first:
+      74: 9051083522610436771
+    second: Lamp|angularBolt_low001|Take 001|BaseLayer
+  - first:
+      74: -681932704945008880
+    second: Lamp|angularBolt_low001|Take 001|BaseLayer.001
+  - first:
+      74: 5817781067595023656
+    second: Lamp|angularBolt_low002|Take 001|BaseLayer
+  - first:
+      74: 4612919938059770754
+    second: Lamp|angularBolt_low002|Take 001|BaseLayer.001
+  - first:
+      74: -5857362364923840266
+    second: Lamp|angularBolt_low003|Take 001|BaseLayer
+  - first:
+      74: -6551338494691795048
+    second: Lamp|angularBolt_low003|Take 001|BaseLayer.001
+  - first:
+      74: 2573042064566650527
+    second: Lamp|angularBolt_low004|Take 001|BaseLayer
+  - first:
+      74: -8255434234161222005
+    second: Lamp|angularBolt_low004|Take 001|BaseLayer.001
+  - first:
+      74: 3880042785443204863
+    second: Lamp|angularBolt_low005|Take 001|BaseLayer
+  - first:
+      74: -5149167352420541758
+    second: Lamp|angularBolt_low005|Take 001|BaseLayer.001
+  - first:
+      74: 3347930789576961909
+    second: Lamp|angularBolt_low|Take 001|BaseLayer
+  - first:
+      74: -8744807342166232992
+    second: Lamp|angularBolt_low|Take 001|BaseLayer.001
+  - first:
+      74: 3174093687606474821
+    second: Lamp|barrel_fixator_low001|Take 001|BaseLayer
+  - first:
+      74: -2470520749289222934
+    second: Lamp|barrel_fixator_low001|Take 001|BaseLayer.001
+  - first:
+      74: -2762395661561053061
+    second: Lamp|barrel_fixator_low|Take 001|BaseLayer
+  - first:
+      74: 2702071244714008619
+    second: Lamp|barrel_fixator_low|Take 001|BaseLayer.001
+  - first:
+      74: 7700175219119953087
+    second: Lamp|barrel_krepej_low001|Take 001|BaseLayer
+  - first:
+      74: 1550680916621386073
+    second: Lamp|barrel_krepej_low001|Take 001|BaseLayer.001
+  - first:
+      74: 2601240314943740276
+    second: Lamp|barrel_krepej_low|Take 001|BaseLayer
+  - first:
+      74: 3348088953441251408
+    second: Lamp|barrel_krepej_low|Take 001|BaseLayer.001
+  - first:
+      74: 7022467944044163198
+    second: Lamp|barrel_low|Take 001|BaseLayer
+  - first:
+      74: 2360761219393361894
+    second: Lamp|barrel_low|Take 001|BaseLayer.001
+  - first:
+      74: -6391833365429045325
+    second: Lamp|barrel_provodBind_low|Take 001|BaseLayer
+  - first:
+      74: -2152078150129822872
+    second: Lamp|barrel_provodBind_low|Take 001|BaseLayer.001
+  - first:
+      74: 8034847553327547938
+    second: Lamp|duga_low|Take 001|BaseLayer
+  - first:
+      74: -2808072290803610825
+    second: Lamp|duga_low|Take 001|BaseLayer.001
+  - first:
+      74: 8380144477409530107
+    second: Lamp|frame_low|Take 001|BaseLayer
+  - first:
+      74: 3877742455442320315
+    second: Lamp|frame_low|Take 001|BaseLayer.001
+  - first:
+      74: 3228199668793138810
+    second: Lamp|frame_vint_low001|Take 001|BaseLayer
+  - first:
+      74: -6938536391686796395
+    second: Lamp|frame_vint_low001|Take 001|BaseLayer.001
+  - first:
+      74: -371696173634862692
+    second: Lamp|frame_vint_low002|Take 001|BaseLayer
+  - first:
+      74: 3767850239860850223
+    second: Lamp|frame_vint_low002|Take 001|BaseLayer.001
+  - first:
+      74: -8015371440886071701
+    second: Lamp|frame_vint_low|Take 001|BaseLayer
+  - first:
+      74: 958262508301323068
+    second: Lamp|frame_vint_low|Take 001|BaseLayer.001
+  - first:
+      74: 8129035580708172588
+    second: Lamp|glass_low|Take 001|BaseLayer
+  - first:
+      74: 1042795380448686784
+    second: Lamp|glass_low|Take 001|BaseLayer.001
+  - first:
+      74: -1365964297860041278
+    second: Lamp|light_base_low|Take 001|BaseLayer
+  - first:
+      74: -6319618853867164120
+    second: Lamp|light_base_low|Take 001|BaseLayer.001
+  - first:
+      74: 8602818976661900428
+    second: Lamp|light_glass_low|Take 001|BaseLayer
+  - first:
+      74: 8260884116213882472
+    second: Lamp|light_glass_low|Take 001|BaseLayer.001
+  - first:
+      74: 5033235634590883178
+    second: Lamp|light_nitka|Take 001|BaseLayer
+  - first:
+      74: 3552944316879239128
+    second: Lamp|light_nitka|Take 001|BaseLayer.001
+  - first:
+      74: -6144974536322939263
+    second: Lamp|noga_binding_bottom_low001|Take 001|BaseLayer
+  - first:
+      74: -65460790339172841
+    second: Lamp|noga_binding_bottom_low001|Take 001|BaseLayer.001
+  - first:
+      74: 4667799435931162552
+    second: Lamp|noga_binding_bottom_low002|Take 001|BaseLayer
+  - first:
+      74: -8468394830344374531
+    second: Lamp|noga_binding_bottom_low002|Take 001|BaseLayer.001
+  - first:
+      74: -6453486863613988092
+    second: Lamp|noga_binding_bottom_low|Take 001|BaseLayer
+  - first:
+      74: 5301427544676960554
+    second: Lamp|noga_binding_bottom_low|Take 001|BaseLayer.001
+  - first:
+      74: -7408288116622518962
+    second: Lamp|noga_binding_up_low001|Take 001|BaseLayer
+  - first:
+      74: -6455973685710473750
+    second: Lamp|noga_binding_up_low001|Take 001|BaseLayer.001
+  - first:
+      74: 705846493881913585
+    second: Lamp|noga_binding_up_low002|Take 001|BaseLayer
+  - first:
+      74: -2495803626815721312
+    second: Lamp|noga_binding_up_low002|Take 001|BaseLayer.001
+  - first:
+      74: -1814869380844918011
+    second: Lamp|noga_binding_up_low|Take 001|BaseLayer
+  - first:
+      74: 1410483481164655520
+    second: Lamp|noga_binding_up_low|Take 001|BaseLayer.001
+  - first:
+      74: 1084275803593323905
+    second: Lamp|noga_low001|Take 001|BaseLayer
+  - first:
+      74: -4368425280533655619
+    second: Lamp|noga_low001|Take 001|BaseLayer.001
+  - first:
+      74: -2198704291886487661
+    second: Lamp|noga_low002|Take 001|BaseLayer
+  - first:
+      74: -6287481722621706824
+    second: Lamp|noga_low002|Take 001|BaseLayer.001
+  - first:
+      74: -8830123829476497470
+    second: Lamp|noga_low|Take 001|BaseLayer
+  - first:
+      74: 3710053537216340556
+    second: Lamp|noga_low|Take 001|BaseLayer.001
+  - first:
+      74: 8397332976729833033
+    second: Lamp|noga_slider_fixator_low001|Take 001|BaseLayer
+  - first:
+      74: -1598373413581193397
+    second: Lamp|noga_slider_fixator_low001|Take 001|BaseLayer.001
+  - first:
+      74: -117090840134316868
+    second: Lamp|noga_slider_fixator_low002|Take 001|BaseLayer
+  - first:
+      74: 1811047303122300223
+    second: Lamp|noga_slider_fixator_low002|Take 001|BaseLayer.001
+  - first:
+      74: -5934340597650937714
+    second: Lamp|noga_slider_fixator_low|Take 001|BaseLayer
+  - first:
+      74: 661628374762662956
+    second: Lamp|noga_slider_fixator_low|Take 001|BaseLayer.001
+  - first:
+      74: -2357183835646932334
+    second: Lamp|noga_slider_low001|Take 001|BaseLayer
+  - first:
+      74: -5367775763933302034
+    second: Lamp|noga_slider_low001|Take 001|BaseLayer.001
+  - first:
+      74: -4687104659531895694
+    second: Lamp|noga_slider_low002|Take 001|BaseLayer
+  - first:
+      74: -6477062968870181770
+    second: Lamp|noga_slider_low002|Take 001|BaseLayer.001
+  - first:
+      74: -7636137926452378837
+    second: Lamp|noga_slider_low|Take 001|BaseLayer
+  - first:
+      74: -8108948064991132525
+    second: Lamp|noga_slider_low|Take 001|BaseLayer.001
+  - first:
+      74: -4109207649420944213
+    second: Lamp|rasporka_keeper_low001|Take 001|BaseLayer
+  - first:
+      74: -4911316450775843045
+    second: Lamp|rasporka_keeper_low001|Take 001|BaseLayer.001
+  - first:
+      74: 6812571058256630384
+    second: Lamp|rasporka_keeper_low002|Take 001|BaseLayer
+  - first:
+      74: 5279607495204421669
+    second: Lamp|rasporka_keeper_low002|Take 001|BaseLayer.001
+  - first:
+      74: -4685184039094465593
+    second: Lamp|rasporka_keeper_low|Take 001|BaseLayer
+  - first:
+      74: -199946257895216292
+    second: Lamp|rasporka_keeper_low|Take 001|BaseLayer.001
+  - first:
+      74: -251529238887132138
+    second: Lamp|rasporka_low001|Take 001|BaseLayer
+  - first:
+      74: -2550122093742906427
+    second: Lamp|rasporka_low001|Take 001|BaseLayer.001
+  - first:
+      74: 5853807970998989213
+    second: Lamp|rasporka_low002|Take 001|BaseLayer
+  - first:
+      74: -1402484197966042395
+    second: Lamp|rasporka_low002|Take 001|BaseLayer.001
+  - first:
+      74: 2670294441039692251
+    second: Lamp|rasporka_low|Take 001|BaseLayer
+  - first:
+      74: -1134113395312603621
+    second: Lamp|rasporka_low|Take 001|BaseLayer.001
+  - first:
+      74: 8356111157027709381
+    second: Lamp|rasporka_zvezda_low|Take 001|BaseLayer
+  - first:
+      74: -6580073669859895613
+    second: Lamp|rasporka_zvezda_low|Take 001|BaseLayer.001
+  - first:
+      74: -3909242401832916401
+    second: Lamp|ruchka_low|Take 001|BaseLayer
+  - first:
+      74: 7146534062997954310
+    second: Lamp|ruchka_low|Take 001|BaseLayer.001
+  - first:
+      74: -4895326958519783934
+    second: Lamp|shtativ_base_low|Take 001|BaseLayer
+  - first:
+      74: 2691541824999181871
+    second: Lamp|shtativ_base_low|Take 001|BaseLayer.001
+  - first:
+      74: -9091108375347792261
+    second: Light Cover|angularBolt_low001|Take 001|BaseLayer
+  - first:
+      74: 478270100925038725
+    second: Light Cover|angularBolt_low001|Take 001|BaseLayer.001
+  - first:
+      74: -5612454321502732615
+    second: Light Cover|angularBolt_low002|Take 001|BaseLayer
+  - first:
+      74: 8101320408568350747
+    second: Light Cover|angularBolt_low002|Take 001|BaseLayer.001
+  - first:
+      74: -4155626087830086359
+    second: Light Cover|angularBolt_low003|Take 001|BaseLayer
+  - first:
+      74: -7279001700838162766
+    second: Light Cover|angularBolt_low003|Take 001|BaseLayer.001
+  - first:
+      74: -6318450955858134245
+    second: Light Cover|angularBolt_low004|Take 001|BaseLayer
+  - first:
+      74: 1231218916416517627
+    second: Light Cover|angularBolt_low004|Take 001|BaseLayer.001
+  - first:
+      74: -3579514816237699489
+    second: Light Cover|angularBolt_low005|Take 001|BaseLayer
+  - first:
+      74: 1649792215499207592
+    second: Light Cover|angularBolt_low005|Take 001|BaseLayer.001
+  - first:
+      74: 8405068833594597038
+    second: Light Cover|angularBolt_low|Take 001|BaseLayer
+  - first:
+      74: 3663832477168018777
+    second: Light Cover|angularBolt_low|Take 001|BaseLayer.001
+  - first:
+      74: 620637174327977466
+    second: Light Cover|barrel_fixator_low001|Take 001|BaseLayer
+  - first:
+      74: -1337825519118376236
+    second: Light Cover|barrel_fixator_low001|Take 001|BaseLayer.001
+  - first:
+      74: 7244751602326166982
+    second: Light Cover|barrel_fixator_low|Take 001|BaseLayer
+  - first:
+      74: 5370484826259854209
+    second: Light Cover|barrel_fixator_low|Take 001|BaseLayer.001
+  - first:
+      74: 8854054081119932413
+    second: Light Cover|barrel_krepej_low001|Take 001|BaseLayer
+  - first:
+      74: 3039823378038148684
+    second: Light Cover|barrel_krepej_low001|Take 001|BaseLayer.001
+  - first:
+      74: 8347937004492814945
+    second: Light Cover|barrel_krepej_low|Take 001|BaseLayer
+  - first:
+      74: -241604691936549038
+    second: Light Cover|barrel_krepej_low|Take 001|BaseLayer.001
+  - first:
+      74: -245716881152303012
+    second: Light Cover|barrel_low|Take 001|BaseLayer
+  - first:
+      74: 3855436121722461441
+    second: Light Cover|barrel_low|Take 001|BaseLayer.001
+  - first:
+      74: -2833675320435044586
+    second: Light Cover|barrel_provodBind_low|Take 001|BaseLayer
+  - first:
+      74: -2382456025468591933
+    second: Light Cover|barrel_provodBind_low|Take 001|BaseLayer.001
+  - first:
+      74: -7862528942323233010
+    second: Light Cover|duga_low|Take 001|BaseLayer
+  - first:
+      74: -6337584917946452430
+    second: Light Cover|duga_low|Take 001|BaseLayer.001
+  - first:
+      74: 6188737172805256285
+    second: Light Cover|frame_low|Take 001|BaseLayer
+  - first:
+      74: -672555810565085970
+    second: Light Cover|frame_low|Take 001|BaseLayer.001
+  - first:
+      74: 7066190205095708602
+    second: Light Cover|frame_vint_low001|Take 001|BaseLayer
+  - first:
+      74: 5956214245829277278
+    second: Light Cover|frame_vint_low001|Take 001|BaseLayer.001
+  - first:
+      74: -1033615612468207028
+    second: Light Cover|frame_vint_low002|Take 001|BaseLayer
+  - first:
+      74: 4486607484649944164
+    second: Light Cover|frame_vint_low002|Take 001|BaseLayer.001
+  - first:
+      74: 1977616481703265877
+    second: Light Cover|frame_vint_low|Take 001|BaseLayer
+  - first:
+      74: -8211854031760228311
+    second: Light Cover|frame_vint_low|Take 001|BaseLayer.001
+  - first:
+      74: -6645516255278047450
+    second: Light Cover|glass_low|Take 001|BaseLayer
+  - first:
+      74: 4631572771262777973
+    second: Light Cover|glass_low|Take 001|BaseLayer.001
+  - first:
+      74: -6034918320980175135
+    second: Light Cover|light_base_low|Take 001|BaseLayer
+  - first:
+      74: 7177056757802697930
+    second: Light Cover|light_base_low|Take 001|BaseLayer.001
+  - first:
+      74: 3054216099619639473
+    second: Light Cover|light_glass_low|Take 001|BaseLayer
+  - first:
+      74: -3995826805674654325
+    second: Light Cover|light_glass_low|Take 001|BaseLayer.001
+  - first:
+      74: 2983039882424072384
+    second: Light Cover|light_nitka|Take 001|BaseLayer
+  - first:
+      74: 6661332881471405698
+    second: Light Cover|light_nitka|Take 001|BaseLayer.001
+  - first:
+      74: 4791846867963001875
+    second: Light Cover|noga_binding_bottom_low001|Take 001|BaseLayer
+  - first:
+      74: 291676862304216143
+    second: Light Cover|noga_binding_bottom_low001|Take 001|BaseLayer.001
+  - first:
+      74: 7760515179877320332
+    second: Light Cover|noga_binding_bottom_low002|Take 001|BaseLayer
+  - first:
+      74: -5948337506001748416
+    second: Light Cover|noga_binding_bottom_low002|Take 001|BaseLayer.001
+  - first:
+      74: 7491436948140520542
+    second: Light Cover|noga_binding_bottom_low|Take 001|BaseLayer
+  - first:
+      74: -5049351067146321598
+    second: Light Cover|noga_binding_bottom_low|Take 001|BaseLayer.001
+  - first:
+      74: 4129644831036088082
+    second: Light Cover|noga_binding_up_low001|Take 001|BaseLayer
+  - first:
+      74: -688774733203187366
+    second: Light Cover|noga_binding_up_low001|Take 001|BaseLayer.001
+  - first:
+      74: 339253626950517686
+    second: Light Cover|noga_binding_up_low002|Take 001|BaseLayer
+  - first:
+      74: 226495582808150993
+    second: Light Cover|noga_binding_up_low002|Take 001|BaseLayer.001
+  - first:
+      74: 187364011533702209
+    second: Light Cover|noga_binding_up_low|Take 001|BaseLayer
+  - first:
+      74: -8575534160342202829
+    second: Light Cover|noga_binding_up_low|Take 001|BaseLayer.001
+  - first:
+      74: 7262458629505014026
+    second: Light Cover|noga_low001|Take 001|BaseLayer
+  - first:
+      74: -2857208046794708557
+    second: Light Cover|noga_low001|Take 001|BaseLayer.001
+  - first:
+      74: 2435037488297777199
+    second: Light Cover|noga_low002|Take 001|BaseLayer
+  - first:
+      74: -1198525657476985019
+    second: Light Cover|noga_low002|Take 001|BaseLayer.001
+  - first:
+      74: 4390495009809862444
+    second: Light Cover|noga_low|Take 001|BaseLayer
+  - first:
+      74: 7613361466946429209
+    second: Light Cover|noga_low|Take 001|BaseLayer.001
+  - first:
+      74: 47483860524666072
+    second: Light Cover|noga_slider_fixator_low001|Take 001|BaseLayer
+  - first:
+      74: 8086072900328690538
+    second: Light Cover|noga_slider_fixator_low001|Take 001|BaseLayer.001
+  - first:
+      74: 6154221539696579068
+    second: Light Cover|noga_slider_fixator_low002|Take 001|BaseLayer
+  - first:
+      74: 5842472631366237022
+    second: Light Cover|noga_slider_fixator_low002|Take 001|BaseLayer.001
+  - first:
+      74: 5134434365993575450
+    second: Light Cover|noga_slider_fixator_low|Take 001|BaseLayer
+  - first:
+      74: 5124036569160058737
+    second: Light Cover|noga_slider_fixator_low|Take 001|BaseLayer.001
+  - first:
+      74: -881553384445099589
+    second: Light Cover|noga_slider_low001|Take 001|BaseLayer
+  - first:
+      74: -6535995608965143903
+    second: Light Cover|noga_slider_low001|Take 001|BaseLayer.001
+  - first:
+      74: 251312414837489026
+    second: Light Cover|noga_slider_low002|Take 001|BaseLayer
+  - first:
+      74: -3438778918448657541
+    second: Light Cover|noga_slider_low002|Take 001|BaseLayer.001
+  - first:
+      74: 318122123642871746
+    second: Light Cover|noga_slider_low|Take 001|BaseLayer
+  - first:
+      74: 3166051749384188553
+    second: Light Cover|noga_slider_low|Take 001|BaseLayer.001
+  - first:
+      74: -6412232377503208902
+    second: Light Cover|rasporka_keeper_low001|Take 001|BaseLayer
+  - first:
+      74: -5952222881355286668
+    second: Light Cover|rasporka_keeper_low001|Take 001|BaseLayer.001
+  - first:
+      74: -780913959361653477
+    second: Light Cover|rasporka_keeper_low002|Take 001|BaseLayer
+  - first:
+      74: -2121078136703663790
+    second: Light Cover|rasporka_keeper_low002|Take 001|BaseLayer.001
+  - first:
+      74: -6118904425033695974
+    second: Light Cover|rasporka_keeper_low|Take 001|BaseLayer
+  - first:
+      74: 6845118635317595766
+    second: Light Cover|rasporka_keeper_low|Take 001|BaseLayer.001
+  - first:
+      74: 7708383129882933464
+    second: Light Cover|rasporka_low001|Take 001|BaseLayer
+  - first:
+      74: -4544078924316466242
+    second: Light Cover|rasporka_low001|Take 001|BaseLayer.001
+  - first:
+      74: 9071685511265778475
+    second: Light Cover|rasporka_low002|Take 001|BaseLayer
+  - first:
+      74: 8012071689037984783
+    second: Light Cover|rasporka_low002|Take 001|BaseLayer.001
+  - first:
+      74: 1326596379743697749
+    second: Light Cover|rasporka_low|Take 001|BaseLayer
+  - first:
+      74: 1742268113091185869
+    second: Light Cover|rasporka_low|Take 001|BaseLayer.001
+  - first:
+      74: 3155883764724101504
+    second: Light Cover|rasporka_zvezda_low|Take 001|BaseLayer
+  - first:
+      74: -2877167837922245178
+    second: Light Cover|rasporka_zvezda_low|Take 001|BaseLayer.001
+  - first:
+      74: -7141755809228864978
+    second: Light Cover|ruchka_low|Take 001|BaseLayer
+  - first:
+      74: 2179194216954872162
+    second: Light Cover|ruchka_low|Take 001|BaseLayer.001
+  - first:
+      74: 3351961008101506157
+    second: Light Cover|shtativ_base_low|Take 001|BaseLayer
+  - first:
+      74: -9187014069897418074
+    second: Light Cover|shtativ_base_low|Take 001|BaseLayer.001
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
