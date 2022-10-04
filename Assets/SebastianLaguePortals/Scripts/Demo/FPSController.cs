@@ -8,6 +8,7 @@ using TheEscapeArtist;
 public class FPSController : PortalTraveller {
 
     [SerializeField] private ItemInspector itemInspector;
+    [SerializeField] private PauseMenu pauseMenu;
 
     public float walkSpeed = 3;
     public float runSpeed = 6;
@@ -55,7 +56,7 @@ public class FPSController : PortalTraveller {
     }
 
     void Update () {
-        if (!itemInspector.IsInspecting && !StereoscopeView.Instance.IsViewing && !MenuManager.Instance.IsInMenu)
+        if (!itemInspector.IsInspecting && !StereoscopeView.Instance.IsViewing && !pauseMenu.IsPaused)
         {
             /*if (Input.GetKeyDown(KeyCode.P))
             {

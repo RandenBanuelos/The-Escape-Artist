@@ -70,17 +70,14 @@ namespace TheEscapeArtist
 
             if (!inspectorCache.IsInspecting && !stereoscopeCache.IsViewing)
             {
-                if (Input.GetKeyDown(KeyCode.Escape))
+                /*if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     if (menuCache.IsInMenu)
                         menuCache.ClosePauseMenu();
                     else
                         menuCache.OpenPauseMenu();
-                }
+                }*/
             }
-
-            if (Input.GetKeyDown(KeyCode.Q))
-                Application.Quit();
         }
 
         #endregion
