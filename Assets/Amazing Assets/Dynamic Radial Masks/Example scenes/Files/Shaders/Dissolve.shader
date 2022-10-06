@@ -6,6 +6,7 @@
 		_MainTex("Albedo", 2D) = "white" {}
 		_Metallic("Metallic", Range( 0 , 1)) = 0
 		_Smoothness("Smoothness", Range( 0 , 1)) = 0
+		_SmoothnessMap("Smoothness Map", 2D) = "white" {}
 		_Normal("Normal Map", 2D) = "white" {}
 
 		[HDR]_EdgeEmission("Edge Emission", Color) = (1,1,1,1)
@@ -29,7 +30,8 @@
 
 		fixed4 _Color;
 		sampler2D _MainTex;
-		half _Glossiness;
+		half _Smoothness;
+		sampler2D _SmoothnessMap;
 		half _Metallic;
 		sampler2D _Normal;
 
@@ -41,6 +43,7 @@
 		struct Input 
 		{
 			float2 uv_MainTex;
+			float2 uv_SmoothnessMap;
 			float2 uv_Normal;
 			float2 uv_DissolveNoise;
 			float3 worldPos;
@@ -64,7 +67,9 @@
 			o.Albedo = c.rgb;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
-			o.Smoothness = _Glossiness;
+
+			fixed4 s = tex2D(_SmoothnessMap, IN.uv_SmoothnessMap) * _Smoothness;
+			o.Smoothness = s.a;
 			o.Alpha = 1;
 			o.Normal = UnpackNormal(tex2D(_Normal, IN.uv_Normal));
 

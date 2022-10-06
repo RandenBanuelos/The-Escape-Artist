@@ -11,6 +11,8 @@ namespace TheEscapeArtist
 
         [SerializeField] private InventoryItem stereoscope;
 
+        [SerializeField] private InventoryItem pocketWatch;
+
         #endregion
 
         #region Singleton Caches
@@ -24,6 +26,8 @@ namespace TheEscapeArtist
         private StereoscopeView stereoscopeCache;
 
         private InteractionController interactionCache;
+
+        private PocketWatch pocketWatchCache;
 
         private bool collectedAllCaches = false;
 
@@ -43,7 +47,7 @@ namespace TheEscapeArtist
             {
                 if (!inspectorCache.IsInspecting)
                 {
-                    if (inventoryCache.IsInInventory(stereoscope))
+                    if (inventoryCache.IsInInventory(stereoscope) && !inventoryCache.IsInInventory(pocketWatch))
                     {
                         if (Input.GetKeyDown(KeyCode.V))
                         {
@@ -55,6 +59,14 @@ namespace TheEscapeArtist
                             {
                                 StartCoroutine(stereoscopeCache.CloseView());
                             }
+                        }
+                    }
+
+                    else if (inventoryCache.IsInInventory(pocketWatch) && !inventoryCache.IsInInventory(stereoscope))
+                    {
+                        if (Input.GetKeyDown(KeyCode.V))
+                        {
+                            pocketWatchCache.TimeShift();
                         }
                     }
                 }
@@ -101,7 +113,10 @@ namespace TheEscapeArtist
             if (!interactionCache)
                 interactionCache = InteractionController.Instance;
 
-            if (inventoryCache && menuCache && inspectorCache && stereoscopeCache && interactionCache)
+            if (!pocketWatchCache)
+                pocketWatchCache = PocketWatch.Instance;
+
+            if (inventoryCache && menuCache && inspectorCache && stereoscopeCache && interactionCache && pocketWatchCache)
                 collectedAllCaches = true;
         }
 

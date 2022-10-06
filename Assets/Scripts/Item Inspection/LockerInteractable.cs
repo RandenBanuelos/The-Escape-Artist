@@ -17,6 +17,12 @@ namespace TheEscapeArtist
 
         [SerializeField] private GameObject shelf;
 
+        [SerializeField] private GameObject mainRoom;
+
+        [SerializeField] private GameObject lockedDoor, regularDoor;
+
+        [SerializeField] private GameObject pastVilla, presentVilla;
+
         [SerializeField] private Transform lockerDoor;
 
         [SerializeField] private float openAngle = -80f;
@@ -46,6 +52,13 @@ namespace TheEscapeArtist
 
             stereoscope.SetActive(false);
             pocketWatch.SetActive(true);
+
+            regularDoor.SetActive(true);
+            lockedDoor.SetActive(false);
+
+            mainRoom.SetActive(false);
+            pastVilla.SetActive(true);
+            presentVilla.SetActive(true);
 
             lockerDoor.DOLocalRotate(new Vector3(0f, openAngle, 0f), openCloseDoorTime);
             yield return new WaitForSeconds(openCloseDoorTime);
