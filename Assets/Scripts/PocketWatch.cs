@@ -68,12 +68,12 @@ namespace TheEscapeArtist
                 }
                 else
                 {
-                    watchObject.radius = Mathf.Lerp(watchObject.radius, 0f, timer);
-                    nearbyColliders.radius = watchObject.radius;
+                    watchObject.radius = Mathf.Lerp(watchObject.radius, -2f, timer);
+                    nearbyColliders.radius = watchObject.radius + 2f;
                     timer += Time.deltaTime;
                     if (timer > watchGrowShrinkTimer)
                     {
-                        watchObject.radius = 0f;
+                        watchObject.radius = -2f;
                         nearbyColliders.radius = 0f;
                         timer = 0f;
                         isGrowingShrinking = false;
