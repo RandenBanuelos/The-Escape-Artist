@@ -23,6 +23,8 @@ namespace TheEscapeArtist
 
         [SerializeField] private GameObject pastVilla, presentVilla;
 
+        [SerializeField] private GameObject flashlight;
+
         [SerializeField] private Transform lockerDoor;
 
         [SerializeField] private float openAngle = -80f;
@@ -31,6 +33,9 @@ namespace TheEscapeArtist
 
         private bool isSwapping = false;
 
+        #endregion
+
+        #region Methods
 
         public override void OnInteract()
         {
@@ -59,6 +64,7 @@ namespace TheEscapeArtist
             mainRoom.SetActive(false);
             pastVilla.SetActive(true);
             presentVilla.SetActive(true);
+            flashlight.SetActive(true);
 
             lockerDoor.DOLocalRotate(new Vector3(0f, openAngle, 0f), openCloseDoorTime);
             yield return new WaitForSeconds(openCloseDoorTime);

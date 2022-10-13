@@ -8,6 +8,7 @@
 		_Smoothness("Smoothness", Range( 0 , 1)) = 0
 		_SmoothnessMap("Smoothness Map", 2D) = "white" {}
 		_Normal("Normal Map", 2D) = "white" {}
+		_AlphaCutoff("Alpha Cutoff", Range(0 , 1)) = 0
 
 		[HDR]_EdgeEmission("Edge Emission", Color) = (1,1,1,1)
 		_DissolveNoise("Dissolve Noise", 2D) = "white" {}
@@ -65,12 +66,13 @@
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 			o.Albedo = c.rgb;
+			o.Alpha = 1;
+
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 
 			fixed4 s = tex2D(_SmoothnessMap, IN.uv_SmoothnessMap) * _Smoothness;
 			o.Smoothness = s.a;
-			o.Alpha = 1;
 			o.Normal = UnpackNormal(tex2D(_Normal, IN.uv_Normal));
 
 			o.Emission = _EdgeEmission * mask;
