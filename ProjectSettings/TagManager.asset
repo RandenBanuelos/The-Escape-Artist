@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Past
   - Present
+  - Flashlight
   layers:
   - Default
   - TransparentFX

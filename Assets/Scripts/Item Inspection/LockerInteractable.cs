@@ -64,6 +64,9 @@ namespace TheEscapeArtist
             mainRoom.SetActive(false);
             pastVilla.SetActive(true);
             presentVilla.SetActive(true);
+
+            if (flashlight == null)
+                flashlight = GameObject.FindGameObjectWithTag("Flashlight");
             flashlight.SetActive(true);
 
             lockerDoor.DOLocalRotate(new Vector3(0f, openAngle, 0f), openCloseDoorTime);

@@ -7080,6 +7080,7 @@ GameObject:
   - component: {fileID: 520071064}
   - component: {fileID: 520071063}
   - component: {fileID: 520071062}
+  - component: {fileID: 520071065}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -7146,6 +7147,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &520071065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520071061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c25e11c616f8945bffe120d1a2e317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &527298493
 GameObject:
   m_ObjectHideFlags: 0
@@ -11325,6 +11338,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f62c06acf708f474d80d78bf64d45daf, type: 3}
+--- !u!1 &822753438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1273086397934861109, guid: f62c06acf708f474d80d78bf64d45daf, type: 3}
+  m_PrefabInstance: {fileID: 822753437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &822753439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822753438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c25e11c616f8945bffe120d1a2e317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &827033762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23335,6 +23365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1774802095}
   - component: {fileID: 1774802094}
+  - component: {fileID: 1774802096}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -23371,6 +23402,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1774802096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774802093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c25e11c616f8945bffe120d1a2e317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1780187026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24495,7 +24538,7 @@ GameObject:
   - component: {fileID: 1809998402}
   m_Layer: 0
   m_Name: Flashlight
-  m_TagString: Untagged
+  m_TagString: Flashlight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26928,7 +26971,7 @@ MonoBehaviour:
   phaseSpeed: 2
   smooth: 3
   drawInEditor: 1
-  currentPhase: 2.709747
+  currentPhase: 13.25741
 --- !u!4 &1966415063
 Transform:
   m_ObjectHideFlags: 0

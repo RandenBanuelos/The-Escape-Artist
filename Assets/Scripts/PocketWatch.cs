@@ -49,12 +49,22 @@ namespace TheEscapeArtist
 
         #endregion
 
+        private void Start()
+        {
+            watchObject.radius = -2f;
+            nearbyColliders.radius = 0f;
+            nearbyColliders.gameObject.SetActive(false);
+        }
+
         private void FixedUpdate()
         {
             if (isGrowingShrinking)
             {
                 if (isInPast)
                 {
+                    if (!nearbyColliders.gameObject.activeSelf)
+                        nearbyColliders.gameObject.SetActive(true);
+
                     watchObject.radius = Mathf.Lerp(watchObject.radius, watchRange, timer);
                     nearbyColliders.radius = watchObject.radius;
                     timer += Time.deltaTime;
@@ -75,6 +85,7 @@ namespace TheEscapeArtist
                     {
                         watchObject.radius = -2f;
                         nearbyColliders.radius = 0f;
+                        nearbyColliders.gameObject.SetActive(false);
                         timer = 0f;
                         isGrowingShrinking = false;
                     }

@@ -232,8 +232,8 @@ namespace TheEscapeArtist
                 FPSController fps = player.GetComponent<FPSController>();
                 fps.StereoscopeAdjust(currentSlide.SpawnPosition.eulerAngles);
 
-                /*if (house.activeSelf)
-                    house.SetActive(false);*/
+                if (house.activeSelf)
+                    house.SetActive(false);
 
                 IsViewing = false;
                 charController.enabled = true;
