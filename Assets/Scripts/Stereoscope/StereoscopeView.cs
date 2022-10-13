@@ -222,6 +222,9 @@ namespace TheEscapeArtist
                 isChangingToNextSlide = false;
                 rotateOut = false;
 
+                if (player == null)
+                    player = GameObject.FindGameObjectWithTag("Player").transform;
+
                 CharacterController charController = player.GetComponent<CharacterController>();
                 charController.enabled = false;
                 player.position = currentSlide.SpawnPosition.position;
@@ -229,8 +232,8 @@ namespace TheEscapeArtist
                 FPSController fps = player.GetComponent<FPSController>();
                 fps.StereoscopeAdjust(currentSlide.SpawnPosition.eulerAngles);
 
-                if (house.activeSelf)
-                    house.SetActive(false);
+                /*if (house.activeSelf)
+                    house.SetActive(false);*/
 
                 IsViewing = false;
                 charController.enabled = true;

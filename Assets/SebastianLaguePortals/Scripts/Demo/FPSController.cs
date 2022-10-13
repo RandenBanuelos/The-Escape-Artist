@@ -53,10 +53,11 @@ public class FPSController : PortalTraveller {
         pitch = cam.transform.localEulerAngles.x;
         smoothYaw = yaw;
         smoothPitch = pitch;
+        smoothPitch = pitch;
     }
 
     void Update () {
-        if (!itemInspector.IsInspecting && !StereoscopeView.Instance.IsViewing && !pauseMenu.IsPaused)
+        if (MoveCheck())
         {
             /*if (Input.GetKeyDown(KeyCode.P))
             {
@@ -163,5 +164,12 @@ public class FPSController : PortalTraveller {
     public void SmoothMoveAdjust(float newSmooth)
     {
         smoothMoveTime = newSmooth;
+    }
+
+    private bool MoveCheck()
+    {
+        if (StereoscopeView.Instance)
+            return !itemInspector.IsInspecting && !StereoscopeView.Instance.IsViewing && !pauseMenu.IsPaused;
+        return !itemInspector.IsInspecting && !pauseMenu.IsPaused;
     }
 }
