@@ -68,7 +68,6 @@ namespace TheEscapeArtist
 
             public void SetPickup(string pickup)
             {
-                Debug.Log("Debugging...");
                 pickupBackground.enabled = true;
                 pickupText.SetText(pickup);
                 Invoke(nameof(ResetPickup), pickupClearTime);

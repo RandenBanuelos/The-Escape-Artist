@@ -25,6 +25,8 @@ namespace TheEscapeArtist
 
             [SerializeField] private bool isInteractable = true;
 
+            [SerializeField] private VoiceClip voiceClip;
+
         #endregion
 
         #region Private Fields
@@ -51,6 +53,8 @@ namespace TheEscapeArtist
 
             public Outline InteractOutline => interactOutline;
 
+            public VoiceClip VoiceClip => voiceClip;
+
         #endregion
 
         #region Public Methods
@@ -63,7 +67,7 @@ namespace TheEscapeArtist
             public virtual void OnInteract()
             {
                 Debug.Log($"InteractableBase.OnInteract(): Interacted with {gameObject.name}!");
-            }
+        }
 
             public void ToggleInteractable(bool toggle)
             {

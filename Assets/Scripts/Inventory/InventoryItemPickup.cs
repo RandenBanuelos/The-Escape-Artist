@@ -17,6 +17,10 @@ namespace TheEscapeArtist
             base.OnInteract();
             InventoryManager.Instance.AddToInventory(itemToAdd);
             InteractionUIPanel.Instance.SetPickup($"Picked Up {itemToAdd.ItemName}");
+
+            if (VoiceClip && VoiceActingManager.Instance)
+                VoiceActingManager.Instance.Say(VoiceClip);
+
             this.gameObject.SetActive(false);
         }
     }

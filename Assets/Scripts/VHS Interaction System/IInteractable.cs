@@ -24,6 +24,8 @@ namespace TheEscapeArtist
 
         Outline InteractOutline { get; }
 
+        VoiceClip VoiceClip { get; }
+
         #endregion
 
         #region Methods
