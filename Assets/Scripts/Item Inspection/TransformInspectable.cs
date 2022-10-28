@@ -27,11 +27,21 @@ namespace TheEscapeArtist
 
         [SerializeField] private List<TransformInspectableSettings> objectsToAdjust = new List<TransformInspectableSettings>();
 
+        [SerializeField] private AudioSource sfxSource;
+
+        [SerializeField] private float pressDelay = 7f;
+
         #endregion
 
         #region Private Field
 
         private List<TransformInspectableSettings> originalAdjustments = new List<TransformInspectableSettings>();
+
+        private bool isBeingPressed = false;
+
+        private Animator buttonAnim;
+
+        private Outline outline;
 
         #endregion
 
@@ -55,46 +65,83 @@ namespace TheEscapeArtist
 
                 originalAdjustments.Add(newSettings);
             }
+
+            buttonAnim = GetComponentInParent<Animator>();
+
+            outline = GetComponent<Outline>();
+
+            isBeingPressed = false;
         }
 
         public override void OnInteract()
         {
-            base.OnInteract();
-            
-            for (int i = 0; i < objectsToAdjust.Count; i++)
+            if (!isBeingPressed)
             {
-                TransformInspectableSettings adjustment = objectsToAdjust[i];
-                TransformInspectableSettings original = originalAdjustments[i];
+                base.OnInteract();
 
-                Transform adjustCache = adjustment.itemToAdjust;
+                isBeingPressed = true;
+                gameObject.layer = LayerMask.NameToLayer("Default");
+                outline.OutlineWidth = 0f;
+                buttonAnim.SetTrigger("PressButton");
 
-                if (adjustCache.localPosition - adjustment.positionAdjustment != Vector3.zero) // Adjust in secondary position
-                {
-                    adjustment.itemToAdjust.DOLocalMove(adjustment.positionAdjustment, adjustment.positionTime);
-                }
-                else
-                {
-                    adjustment.itemToAdjust.DOLocalMove(original.positionAdjustment, adjustment.positionTime);
-                }
+                if (sfxSource)
+                    sfxSource.Play();
+                
+                Invoke("ClearTrigger('PressButton')", .1f);
+                Invoke(nameof(UnpressButton), pressDelay);
 
-                if (adjustCache.localEulerAngles - adjustment.rotationAdjustment != Vector3.zero) // Adjust in secondary rotation
+                for (int i = 0; i < objectsToAdjust.Count; i++)
                 {
-                    adjustment.itemToAdjust.DOLocalRotate(adjustment.rotationAdjustment, adjustment.rotationTime);
-                }
-                else
-                {
-                    adjustment.itemToAdjust.DOLocalRotate(original.rotationAdjustment, adjustment.rotationTime);
-                }
+                    TransformInspectableSettings adjustment = objectsToAdjust[i];
+                    TransformInspectableSettings original = originalAdjustments[i];
 
-                if (adjustCache.localScale - adjustment.scaleAdjustment != Vector3.zero) // Adjust in secondary scale
-                {
-                    adjustment.itemToAdjust.DOScale(adjustment.scaleAdjustment, adjustment.scaleTime);
-                }
-                else
-                {
-                    adjustment.itemToAdjust.DOScale(original.scaleAdjustment, adjustment.scaleTime);
+                    Transform adjustCache = adjustment.itemToAdjust;
+
+                    if (adjustCache.localPosition - adjustment.positionAdjustment != Vector3.zero) // Adjust in secondary position
+                    {
+                        adjustment.itemToAdjust.DOLocalMove(adjustment.positionAdjustment, adjustment.positionTime);
+                    }
+                    else
+                    {
+                        adjustment.itemToAdjust.DOLocalMove(original.positionAdjustment, adjustment.positionTime);
+                    }
+
+                    if (adjustCache.localEulerAngles - adjustment.rotationAdjustment != Vector3.zero) // Adjust in secondary rotation
+                    {
+                        adjustment.itemToAdjust.DOLocalRotate(adjustment.rotationAdjustment, adjustment.rotationTime);
+                    }
+                    else
+                    {
+                        adjustment.itemToAdjust.DOLocalRotate(original.rotationAdjustment, adjustment.rotationTime);
+                    }
+
+                    if (adjustCache.localScale - adjustment.scaleAdjustment != Vector3.zero) // Adjust in secondary scale
+                    {
+                        adjustment.itemToAdjust.DOScale(adjustment.scaleAdjustment, adjustment.scaleTime);
+                    }
+                    else
+                    {
+                        adjustment.itemToAdjust.DOScale(original.scaleAdjustment, adjustment.scaleTime);
+                    }
                 }
             }
+        }
+
+        private void ClearTrigger(string triggerName)
+        {
+            buttonAnim.ResetTrigger(triggerName);
+        }
+
+        private void UnpressButton()
+        {
+            buttonAnim.SetTrigger("UnpressButton");
+            gameObject.layer = LayerMask.NameToLayer("Interactable");
+
+            if (sfxSource)
+                sfxSource.Stop();
+            
+            isBeingPressed = false;
+            Invoke("ClearTrigger('UnpressButton')", .1f);
         }
     }
 }
