@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c349ceec70fab4e8115475a58085bc, type: 3}
+  m_Name: EnteredHouse
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: 48139356d24da8c449295067a0b26569, type: 3}
+  Subtitles:
+  - subtitleText: What do you think?
+    displayTime: 1
+  - subtitleText: Much cozier on the inside I say.
+    displayTime: 2.25
+  - subtitleText: And don't worry, you're still perfectly sane.
+    displayTime: 3
+  - subtitleText: Me communicating from beyond the grave
+    displayTime: 2.25
+  - subtitleText: is the least surprising thing you'll find in here.
+    displayTime: 2.5

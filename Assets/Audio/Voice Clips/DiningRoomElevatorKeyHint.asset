@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c349ceec70fab4e8115475a58085bc, type: 3}
+  m_Name: DiningRoomElevatorKeyHint
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: cd9c6fd1357ef5e428b7fc5e81bb9ce8, type: 3}
+  Subtitles:
+  - subtitleText: Your mother would always get on my case
+    displayTime: 2
+  - subtitleText: for losing my keys
+    displayTime: 1
+  - subtitleText: ...perhaps she had a point.
+    displayTime: 2.25
+  - subtitleText: I tended to leave them in the kitchen while making lunch.
+    displayTime: 3

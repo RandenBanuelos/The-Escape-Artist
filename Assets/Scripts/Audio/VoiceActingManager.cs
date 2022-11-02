@@ -24,6 +24,11 @@ namespace TheEscapeArtist
 
         [SerializeField] private AudioClip ejectTape;
 
+        [Header("Glitch SFX")]
+        [SerializeField] private AudioClip glitchEnter;
+
+        [SerializeField] private AudioClip glitchExit;
+
         #endregion
 
         #region Private Fields
@@ -89,6 +94,11 @@ namespace TheEscapeArtist
                 source.PlayOneShot(pressPlay);
                 yield return new WaitForSeconds(pressPlay.length);
             }
+            else
+            {
+                source.PlayOneShot(glitchEnter);
+                yield return new WaitForSeconds(insertTape.length);
+            }
 
             source.PlayOneShot(voiceClip.Clip);
             StartCoroutine(PlaySubtitles(voiceClip.Subtitles));
@@ -101,6 +111,11 @@ namespace TheEscapeArtist
 
                 source.PlayOneShot(ejectTape);
                 yield return new WaitForSeconds(ejectTape.length);
+            }
+            else
+            {
+                source.PlayOneShot(glitchExit);
+                yield return new WaitForSeconds(pressStop.length);
             }
 
             isSpeaking = false;

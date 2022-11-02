@@ -43,6 +43,8 @@ namespace TheEscapeArtist
 
         private Outline outline;
 
+        private bool alreadyPlayed = false;
+
         #endregion
 
         private void Start()
@@ -86,7 +88,13 @@ namespace TheEscapeArtist
 
                 if (sfxSource)
                     sfxSource.Play();
-                
+
+                if (!alreadyPlayed && VoiceClip && VoiceActingManager.Instance)
+                {
+                    alreadyPlayed = true;
+                    VoiceActingManager.Instance.Say(VoiceClip);
+                }
+
                 Invoke("ClearTrigger('PressButton')", .1f);
                 Invoke(nameof(UnpressButton), pressDelay);
 

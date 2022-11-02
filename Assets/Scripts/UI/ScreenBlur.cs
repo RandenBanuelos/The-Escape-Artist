@@ -20,7 +20,7 @@ namespace TheEscapeArtist
 
         private void Start()
         {
-            ToggleBlur(false);
+            // ToggleBlur(false);
         }
 
         #endregion
