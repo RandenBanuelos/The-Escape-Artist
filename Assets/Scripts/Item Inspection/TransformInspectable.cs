@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using EZCameraShake;
 
 namespace TheEscapeArtist
 {
@@ -93,6 +94,11 @@ namespace TheEscapeArtist
                 {
                     alreadyPlayed = true;
                     VoiceActingManager.Instance.Say(VoiceClip);
+                }
+
+                if (ShakeCamera)
+                {
+                    CameraShaker.Instance.ShakeOnce(ShakeMagnitude, 4f, .1f, ShakeDuration);
                 }
 
                 Invoke("ClearTrigger('PressButton')", .1f);

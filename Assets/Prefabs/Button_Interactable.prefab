@@ -119,9 +119,13 @@ MonoBehaviour:
   holdInteract: 0
   multipleUse: 1
   isInteractable: 1
+  shakeCamera: 0
+  shakeDuration: 0.15
+  shakeMagnitude: 0.4
   voiceClip: {fileID: 0}
   objectsToAdjust: []
   sfxSource: {fileID: 0}
+  pressDelay: 7
 --- !u!114 &6604289512166923968
 MonoBehaviour:
   m_ObjectHideFlags: 0

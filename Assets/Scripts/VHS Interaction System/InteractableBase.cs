@@ -25,6 +25,12 @@ namespace TheEscapeArtist
 
             [SerializeField] private bool isInteractable = true;
 
+            [SerializeField] private bool shakeCamera = false;
+
+            [SerializeField] private float shakeDuration = 1f;
+
+            [SerializeField] private float shakeMagnitude = 4f;
+
             [SerializeField] private VoiceClip voiceClip;
 
         #endregion
@@ -50,6 +56,12 @@ namespace TheEscapeArtist
             public bool MultipleUse => multipleUse;
 
             public bool IsInteractable => isInteractable;
+
+            public bool ShakeCamera => shakeCamera;
+
+            public float ShakeDuration => shakeDuration;
+
+            public float ShakeMagnitude => shakeMagnitude;
 
             public Outline InteractOutline => interactOutline;
 

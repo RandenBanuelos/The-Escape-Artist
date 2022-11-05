@@ -22,6 +22,12 @@ namespace TheEscapeArtist
 
         bool IsInteractable { get; }
 
+        bool ShakeCamera { get; }
+
+        float ShakeDuration { get; }
+
+        float ShakeMagnitude { get; }
+
         Outline InteractOutline { get; }
 
         VoiceClip VoiceClip { get; }

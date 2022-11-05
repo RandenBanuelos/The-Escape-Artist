@@ -22,11 +22,11 @@ namespace TheEscapeArtist
 
         #endregion
 
-        #region Public Fields
+        #region Public Methods
 
         #endregion
 
-        #region Private Fields
+        #region Private Methods
 
         #endregion
     }

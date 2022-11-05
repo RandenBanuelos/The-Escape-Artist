@@ -87,15 +87,7 @@ namespace TheEscapeArtist
 
         #endregion
 
-        #region "Getter's" & "Setter's"
-
-        #endregion
-
-        #region Public Fields
-
-        #endregion
-
-        #region Private Fields
+        #region Private Methods
 
         private void SetFocus()
         {
