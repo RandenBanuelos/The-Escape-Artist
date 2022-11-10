@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c349ceec70fab4e8115475a58085bc, type: 3}
+  m_Name: PickedUpRemote
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: bd6aa827b96375748bf21b1ea536fa46, type: 3}
+  Subtitles:
+  - subtitleText: 'I wasn''t a fan of having a TV in the house, '
+    displayTime: 3
+  - subtitleText: 'thought it would rot your brain. '
+    displayTime: 1.75
+  - subtitleText: Yet your mother insisted
+    displayTime: 2
+  - subtitleText: ...and spent God knows how much of my money
+    displayTime: 2
+  - subtitleText: on the home shopping channel.
+    displayTime: 1.75

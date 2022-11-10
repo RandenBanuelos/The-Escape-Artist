@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c349ceec70fab4e8115475a58085bc, type: 3}
+  m_Name: PickedUpPocketWatch
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: 859c7f37c1979114dad10818bd53e308, type: 3}
+  Subtitles:
+  - subtitleText: Alright...you've made it this far.
+    displayTime: 2.25
+  - subtitleText: Use this to see when your
+    displayTime: 0.75
+  - subtitleText: mother and I were happy...
+    displayTime: 2
+  - subtitleText: ...and when it all fell apart.
+    displayTime: 3

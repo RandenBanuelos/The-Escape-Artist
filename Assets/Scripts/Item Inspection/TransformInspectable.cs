@@ -85,7 +85,9 @@ namespace TheEscapeArtist
                 isBeingPressed = true;
                 gameObject.layer = LayerMask.NameToLayer("Default");
                 outline.OutlineWidth = 0f;
-                buttonAnim.SetTrigger("PressButton");
+
+                if (buttonAnim)
+                    buttonAnim.SetTrigger("PressButton");
 
                 if (sfxSource)
                     sfxSource.Play();
@@ -101,8 +103,11 @@ namespace TheEscapeArtist
                     CameraShaker.Instance.ShakeOnce(ShakeMagnitude, 4f, .1f, ShakeDuration);
                 }
 
-                Invoke("ClearTrigger('PressButton')", .1f);
-                Invoke(nameof(UnpressButton), pressDelay);
+                if (buttonAnim)
+                {
+                    Invoke("ClearTrigger('PressButton')", .1f);
+                    Invoke(nameof(UnpressButton), pressDelay);
+                }
 
                 for (int i = 0; i < objectsToAdjust.Count; i++)
                 {

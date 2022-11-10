@@ -8,7 +8,11 @@ namespace TheEscapeArtist
     {
         #region Private Serializable Fields
 
+        [SerializeField] private GameObject record;
+
         [SerializeField] private Animator ufoAnimator;
+
+        [SerializeField] private Animator buttonAnimator;
 
         [SerializeField] private string ufoTrigger = "ActivateRide";
 
@@ -25,6 +29,10 @@ namespace TheEscapeArtist
             if (isPowered)
             {
                 base.OnInteract();
+                gameObject.layer = LayerMask.NameToLayer("Default");
+                buttonAnimator.SetTrigger("PressButton");
+                gameObject.GetComponent<Outline>().OutlineWidth = 0;
+                record.SetActive(true);
                 ufoAnimator.SetTrigger(ufoTrigger);
                 ToggleInteractable(false);
                 Invoke(nameof(ResetUFOTrigger), 1f);

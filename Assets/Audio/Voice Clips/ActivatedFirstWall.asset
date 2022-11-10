@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c349ceec70fab4e8115475a58085bc, type: 3}
+  m_Name: ActivatedFirstWall
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: 25b7b704b5c951947930e2f193b90cbd, type: 3}
+  Subtitles:
+  - subtitleText: Houses with simple doors and deadbolts
+    displayTime: 2
+  - subtitleText: are far too easy to break into.
+    displayTime: 2
+  - subtitleText: But moving walls?
+    displayTime: 1.5
+  - subtitleText: Now that's security.
+    displayTime: 1.5
+  - subtitleText: But you may want to run before some
+    displayTime: 1.5
+  - subtitleText: of them close in on you.
+    displayTime: 1.5

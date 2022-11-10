@@ -35,7 +35,7 @@ namespace TheEscapeArtist
                 renderCamera.targetTexture.Release();
             }
 
-            renderCamera.targetTexture = new RenderTexture(800, 800, 24);
+            renderCamera.targetTexture = new RenderTexture(1472, 828, 24);
             cameraTexture = renderCamera.targetTexture;
 
             spawnPosition = renderCamera.transform;

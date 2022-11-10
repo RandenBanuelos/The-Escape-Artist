@@ -27,11 +27,8 @@ namespace TheEscapeArtist
         [SerializeField] private float viewRotationModifier = 1.5f;
 
         [Header("RectTransform's")]
-        [SerializeField] private RectTransform leftViewAnchor;
-        [SerializeField] private RectTransform leftCoverAnchor;
-
-        [SerializeField] private RectTransform rightViewAnchor;
-        [SerializeField] private RectTransform rightCoverAnchor;
+        [SerializeField] private RectTransform viewAnchor;
+        [SerializeField] private RectTransform coverAnchor;
 
         [SerializeField] private TMP_Text viewText;
         [SerializeField] private RectTransform viewTextCover;
@@ -50,13 +47,9 @@ namespace TheEscapeArtist
 
         private bool isDoneRotatingView;
 
-        private Vector3 leftAnchorStartingRotation;
-        private Vector3 leftAnchorEndRotation;
-        private Vector3 leftCoverAnchorEndRotation;
-
-        private Vector3 rightAnchorStartingRotation;
-        private Vector3 rightAnchorEndRotation;
-        private Vector3 rightCoverAnchorEndRotation;
+        private Vector3 anchorStartingRotation;
+        private Vector3 anchorEndRotation;
+        private Vector3 coverAnchorEndRotation;
 
         private Vector3 viewTextStartingPosition;
         private Vector3 viewTextEndPosition;
@@ -66,9 +59,7 @@ namespace TheEscapeArtist
 
         private bool rotateOut = false;
 
-        private RawImage leftView;
-
-        private RawImage rightView;
+        private RawImage view;
 
         private StereoscopeReel currentReel;
 
@@ -98,16 +89,11 @@ namespace TheEscapeArtist
 
         private void Start()
         {
-            leftView = leftViewAnchor.GetComponentInChildren<RawImage>();
-            rightView = rightViewAnchor.GetComponentInChildren<RawImage>();
+            view = viewAnchor.GetComponentInChildren<RawImage>();
 
-            leftAnchorStartingRotation = leftViewAnchor.localEulerAngles;
-            leftAnchorEndRotation = new Vector3(leftAnchorStartingRotation.x, leftAnchorStartingRotation.y, leftAnchorStartingRotation.z + viewRotationAmount);
-            leftCoverAnchorEndRotation = new Vector3(leftAnchorStartingRotation.x, leftAnchorStartingRotation.y, leftAnchorStartingRotation.z - viewRotationAmount);
-
-            rightAnchorStartingRotation = rightViewAnchor.localEulerAngles;
-            rightAnchorEndRotation = new Vector3(rightAnchorStartingRotation.x, rightAnchorStartingRotation.y, rightAnchorStartingRotation.z + viewRotationAmount);
-            rightCoverAnchorEndRotation = new Vector3(rightAnchorStartingRotation.x, rightAnchorStartingRotation.y, rightAnchorStartingRotation.z - viewRotationAmount);
+            anchorStartingRotation = viewAnchor.localEulerAngles;
+            anchorEndRotation = new Vector3(anchorStartingRotation.x, anchorStartingRotation.y, anchorStartingRotation.z + viewRotationAmount);
+            coverAnchorEndRotation = new Vector3(anchorStartingRotation.x, anchorStartingRotation.y, anchorStartingRotation.z - viewRotationAmount);
 
             viewTextStartingPosition = viewText.transform.position;
             viewTextEndPosition = new Vector3(viewTextStartingPosition.x + viewCoverMoveX, viewTextStartingPosition.y, viewTextStartingPosition.z);
@@ -125,16 +111,14 @@ namespace TheEscapeArtist
             {
                 if (rotateOut)
                 {
-                    leftViewAnchor.localEulerAngles = Vector3.Lerp(leftAnchorStartingRotation, leftAnchorEndRotation, timer / (viewRotationOutTime * viewRotationModifier));
-                    rightViewAnchor.localEulerAngles = Vector3.Lerp(rightAnchorStartingRotation, rightAnchorEndRotation, timer / (viewRotationOutTime * viewRotationModifier));
+                    viewAnchor.localEulerAngles = Vector3.Lerp(anchorStartingRotation, anchorEndRotation, timer / (viewRotationOutTime * viewRotationModifier));
                     viewText.transform.position = Vector3.Lerp(viewTextStartingPosition, viewTextEndPosition, timer / viewRotationOutTime);
                     viewTextCover.transform.position = Vector3.Lerp(viewCoverStartingPosition, viewCoverEndPosition, timer / viewRotationOutTime);
 
                     timer += Time.deltaTime;
                     if (timer >= viewRotationOutTime)
                     {
-                        leftViewAnchor.localEulerAngles = leftAnchorEndRotation;
-                        rightViewAnchor.localEulerAngles = rightAnchorEndRotation;
+                        viewAnchor.localEulerAngles = anchorEndRotation;
                         viewText.transform.position = viewTextEndPosition;
                         viewTextCover.transform.position = viewCoverEndPosition;
 
@@ -144,15 +128,13 @@ namespace TheEscapeArtist
                 }
                 else
                 {
-                    leftCoverAnchor.localEulerAngles = Vector3.Lerp(leftAnchorStartingRotation, leftCoverAnchorEndRotation, timer / (viewRotationInTime * viewRotationModifier));
-                    rightCoverAnchor.localEulerAngles = Vector3.Lerp(rightAnchorStartingRotation, rightCoverAnchorEndRotation, timer / (viewRotationInTime * viewRotationModifier));
+                    coverAnchor.localEulerAngles = Vector3.Lerp(anchorStartingRotation, coverAnchorEndRotation, timer / (viewRotationInTime * viewRotationModifier));
                     viewTextCover.transform.position = Vector3.Lerp(viewCoverEndPosition, viewCoverStartingPosition, timer / viewRotationInTime);
 
                     timer += Time.deltaTime;
                     if (timer >= viewRotationInTime)
                     {
-                        leftCoverAnchor.localEulerAngles = leftCoverAnchorEndRotation;
-                        rightCoverAnchor.localEulerAngles = rightCoverAnchorEndRotation;
+                        coverAnchor.localEulerAngles = coverAnchorEndRotation;
                         viewTextCover.transform.position = viewCoverStartingPosition;
 
                         timer = 0f;
@@ -197,11 +179,9 @@ namespace TheEscapeArtist
                 viewText.text = currentSlide.SlideDescription;
                 viewText.transform.position = viewTextStartingPosition;
 
-                leftCoverAnchor.localEulerAngles = leftAnchorStartingRotation;
-                rightCoverAnchor.localEulerAngles = rightAnchorStartingRotation;
+                coverAnchor.localEulerAngles = anchorStartingRotation;
 
-                leftViewAnchor.localEulerAngles = leftAnchorStartingRotation;
-                rightViewAnchor.localEulerAngles = rightAnchorStartingRotation;
+                viewAnchor.localEulerAngles = anchorStartingRotation;
 
                 pastScenery.SetActive(false);
                 currentSlide.Scenery.SetActive(true);
@@ -257,8 +237,7 @@ namespace TheEscapeArtist
 
         private void SetView(RenderTexture newTexture)
         {
-            leftView.texture = newTexture;
-            rightView.texture = newTexture;
+            view.texture = newTexture;
         }
 
         private void ResetView()

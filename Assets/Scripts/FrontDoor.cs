@@ -26,7 +26,7 @@ namespace TheEscapeArtist
 
         private IEnumerator OpenDoorAfterVoiceOver()
         {
-            yield return new WaitUntil(() => vaManager.IsSpeaking == false);
+            yield return new WaitUntil(() => vaManager.NotVoiceActing() == true);
             doorCreak.Play();
             frontDoor.SetTrigger("OpenDoor");
             Invoke(nameof(ClearTrigger), 1f);

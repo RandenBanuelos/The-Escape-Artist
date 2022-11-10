@@ -35,6 +35,10 @@ namespace TheEscapeArtist
 
         private bool isSpeaking = false;
 
+        private Queue<VoiceClip> voiceClipQueue = new Queue<VoiceClip>();
+
+        private Queue<bool> actualTapeQueue = new Queue<bool>();
+
         #endregion
 
         #region Singleton
@@ -61,20 +65,35 @@ namespace TheEscapeArtist
 
         #endregion
 
+        #region MonoBehaviour Callbacks
+
+        private void Update()
+        {
+            if (!isSpeaking && voiceClipQueue.Count > 0)
+            {
+                VoiceClip nextVoiceClip = voiceClipQueue.Dequeue();
+                bool isActualTape = actualTapeQueue.Dequeue();
+
+                StartCoroutine(PlayCassettePlayer(nextVoiceClip, isActualTape));
+            }
+        }
+
+        #endregion
+
         #region Public Methods
 
         public void Say(VoiceClip voiceClip, bool isActualTape = false)
         {
-            if (source.isPlaying)
-            {
-                source.Stop();
-                StopCoroutine(nameof(PlayCassettePlayer));
-            }
-
-            StartCoroutine(PlayCassettePlayer(voiceClip, isActualTape));
+            voiceClipQueue.Enqueue(voiceClip);
+            actualTapeQueue.Enqueue(isActualTape);
         }
 
         public bool IsSpeaking => isSpeaking;
+
+        public bool NotVoiceActing()
+        {
+            return !isSpeaking && voiceClipQueue.Count == 0;
+        }
 
         #endregion
 

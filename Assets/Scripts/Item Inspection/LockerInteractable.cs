@@ -25,11 +25,7 @@ namespace TheEscapeArtist
 
         [SerializeField] private GameObject flashlight;
 
-        [SerializeField] private Transform lockerDoor;
-
-        [SerializeField] private float openAngle = -80f;
-
-        [SerializeField] private float openCloseDoorTime = 2f;
+        [SerializeField] private Animator lockerDoor;
 
         private bool isSwapping = false;
 
@@ -50,28 +46,25 @@ namespace TheEscapeArtist
         private IEnumerator StereoscopeWatchSwap()
         {
             stereoscope.SetActive(true);
+            gameObject.layer = LayerMask.NameToLayer("Default");
+
             InventoryManager.Instance.RemoveFromInventory(stereoscopeItem);
 
-            lockerDoor.DOLocalRotate(Vector3.zero, openCloseDoorTime);
-            yield return new WaitForSeconds(openCloseDoorTime);
+            lockerDoor.SetTrigger("CloseDoor");
+            yield return new WaitForSeconds(3f);
+            lockerDoor.ResetTrigger("CloseDoor");
 
             stereoscope.SetActive(false);
             pocketWatch.SetActive(true);
-
-            regularDoor.SetActive(true);
-            lockedDoor.SetActive(false);
-
-            mainRoom.SetActive(false);
-            pastVilla.SetActive(true);
-            presentVilla.SetActive(true);
 
             /*if (flashlight == null)
                 flashlight = GameObject.FindGameObjectWithTag("Flashlight");
             flashlight.SetActive(true);*/
 
-            lockerDoor.DOLocalRotate(new Vector3(0f, openAngle, 0f), openCloseDoorTime);
-            yield return new WaitForSeconds(openCloseDoorTime);
+            lockerDoor.SetTrigger("OpenDoor");
+            yield return new WaitForSeconds(2f);
 
+            lockerDoor.ResetTrigger("OpenDoor");
             shelf.SetActive(true);
             this.gameObject.SetActive(false);
         }

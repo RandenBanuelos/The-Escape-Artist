@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c349ceec70fab4e8115475a58085bc, type: 3}
+  m_Name: PickedUpStereoscope
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: 0da16eaa7c5f052448dc298d3d5cee42, type: 3}
+  Subtitles:
+  - subtitleText: 'My apologies for repurposing your '
+    displayTime: 2
+  - subtitleText: 'old stereoscope toy. '
+    displayTime: 1.75
+  - subtitleText: But I think it works much better now.
+    displayTime: 2
