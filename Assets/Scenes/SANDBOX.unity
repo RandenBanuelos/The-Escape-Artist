@@ -10361,7 +10361,7 @@ MonoBehaviour:
   shaderData_RingCount:
   - 3
   shaderData_Phase:
-  - 6.4876833
+  - 1.0712788
   shaderData_Frequency:
   - 10
   shaderData_Smooth:
@@ -44841,7 +44841,7 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: 6255340ff71a77a419262417324c3d0b, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 0
+  weight: 1
   priority: 0
 --- !u!64 &1946563018
 MeshCollider:
@@ -45666,7 +45666,7 @@ MonoBehaviour:
   phaseSpeed: 2
   smooth: 3
   drawInEditor: 1
-  currentPhase: 7.15435
+  currentPhase: 1.7379456
 --- !u!4 &1966415063
 Transform:
   m_ObjectHideFlags: 0
