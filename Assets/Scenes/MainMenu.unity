@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f91805b22675642be6140606802390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevelName: Main
+  firstLevelName: SANDBOX
   optionsScreen: {fileID: 1514451320}
   loadingScreen: {fileID: 1037326155}
   loadingIcon: {fileID: 1578756780}

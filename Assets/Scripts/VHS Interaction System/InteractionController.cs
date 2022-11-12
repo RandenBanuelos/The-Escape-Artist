@@ -15,7 +15,12 @@ namespace TheEscapeArtist
 
             [Space]
             [Header("UI")]
-            [SerializeField] private float outlineWidth = 2f;
+            [SerializeField] private float highlightedOutlineWidth = 2f;
+
+            [SerializeField] private Color highlightedColor;
+
+            [SerializeField] private float defaultOutlineWidth = 4f;
+
 
             [Space]
             [Header("Ray Settings")]
@@ -99,21 +104,26 @@ namespace TheEscapeArtist
                     {
                         interactionData.Interactable = interactable;
                         uiPanel.SetTooltip(interactionData.Interactable.TooltipMessage);
-                        interactionData.Interactable.InteractOutline.OutlineWidth = outlineWidth;
+                        interactionData.Interactable.InteractOutline.OutlineWidth = highlightedOutlineWidth;
+                        interactionData.Interactable.InteractOutline.OutlineColor = highlightedColor;
                     }
                     else
                     {
                         if (!interactionData.IsSameInteractable(interactable))
                             interactionData.Interactable = interactable;
                             uiPanel.SetTooltip(interactionData.Interactable.TooltipMessage);
-                            interactionData.Interactable.InteractOutline.OutlineWidth = outlineWidth;
+                            interactionData.Interactable.InteractOutline.OutlineWidth = highlightedOutlineWidth;
+                            interactionData.Interactable.InteractOutline.OutlineColor = highlightedColor;
                     }
                 }
             }
             else
             {
                 if (!interactionData.IsEmpty())
-                    interactionData.Interactable.InteractOutline.OutlineWidth = 0f;
+                {
+                    interactionData.Interactable.InteractOutline.OutlineWidth = defaultOutlineWidth;
+                    interactionData.Interactable.InteractOutline.OutlineColor = Color.white;
+                }
 
                 uiPanel.ResetUI();
                 interactionData.ResetData();
