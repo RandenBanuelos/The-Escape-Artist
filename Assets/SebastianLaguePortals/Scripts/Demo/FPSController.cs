@@ -168,8 +168,8 @@ public class FPSController : PortalTraveller {
 
     private bool MoveCheck()
     {
-        if (StereoscopeView.Instance)
-            return !itemInspector.IsInspecting && !StereoscopeView.Instance.IsViewing && !pauseMenu.IsPaused;
+        if (StereoscopeView.Instance && PuzzleCubeManager.Instance)
+            return !itemInspector.IsInspecting && !StereoscopeView.Instance.IsViewing && !pauseMenu.IsPaused && !PuzzleCubeManager.Instance.PuzzleCubeIsOpen;
         return !itemInspector.IsInspecting && !pauseMenu.IsPaused;
     }
 }

@@ -14,6 +14,10 @@ namespace TheEscapeArtist
     {
         #region Private Serializable Fields
 
+        [SerializeField] private ScreenBlur screenBlur;
+
+        [SerializeField] private CharacterController playerController;
+
         [SerializeField] private string mainMenuSceneName;
 
         [SerializeField] private GameObject optionsScreen, pauseScreen;
@@ -30,17 +34,27 @@ namespace TheEscapeArtist
 
         public bool IsPaused { get; private set; }
 
-        private bool isInOptions = false;
+        // private bool isInOptions = false;
 
         #endregion
 
-        #region MonoBehaviour Callbacks
+        #region Singleton
+        // Singleton pattern from user PearsonArtPhoto on StackExchange
+        // https://gamedev.stackexchange.com/questions/116009/in-unity-how-do-i-correctly-implement-the-singleton-pattern
+        private static PauseMenu _instance;
 
-        private void Update()
+        public static PauseMenu Instance { get { return _instance; } }
+
+        private void Awake()
         {
-            if (!isInOptions && Input.GetKeyDown(KeyCode.Escape))
+            if (_instance != null && _instance != this)
             {
-                PauseUnpause();
+                Debug.Log("Cannot have more than one PauseMenu Singleton!");
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                _instance = this;
             }
         }
 
@@ -54,9 +68,11 @@ namespace TheEscapeArtist
             {
                 IsPaused = true;
 
+                playerController.enabled = false;
                 Time.timeScale = 0f;
                 Cursor.lockState = CursorLockMode.Confined;
                 pauseMenuReminder.SetActive(false);
+                screenBlur.ToggleBlur(true);
 
                 pauseScreen.SetActive(true);
             }
@@ -64,9 +80,11 @@ namespace TheEscapeArtist
             {
                 pauseScreen.SetActive(false);
 
+                screenBlur.ToggleBlur(false);
                 pauseMenuReminder.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 Time.timeScale = 1f;
+                playerController.enabled = true;
 
                 IsPaused = false;
             }
@@ -74,14 +92,14 @@ namespace TheEscapeArtist
 
         public void OpenOptions()
         {
-            isInOptions = true;
+            // isInOptions = true;
             optionsScreen.SetActive(true);
         }
 
         public void CloseOptions()
         {
             optionsScreen.SetActive(false);
-            isInOptions = false;
+            // isInOptions = false;
         }
 
         public void QuitToMainMenu()

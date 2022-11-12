@@ -68,7 +68,7 @@ namespace TheEscapeArtist
                 if (inspectorCache == null)
                     inspectorCache = ItemInspector.Instance;
 
-                if (!inspectorCache.IsInspecting)
+                if (!inspectorCache.IsInspecting && !PuzzleCubeManager.Instance.PuzzleCubeIsOpen && !PauseMenu.Instance.IsPaused)
                 {
                     CheckForInteractable();
                     CheckForInteractableInput();

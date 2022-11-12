@@ -12,9 +12,18 @@ namespace TheEscapeArtist
     // http://kociemba.org/cube.htm
     public class SolveTwoPhase : MonoBehaviour
     {
+        #region Private Serializable Fields
+
+        [SerializeField] private List<PivotRotation> pivots = new List<PivotRotation>();
+
+        [SerializeField] private float superSpeed = 600f;
+
+        #endregion
+
         public ReadCube readCube;
         public CubeState cubeState;
         private bool doOnce = true;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -32,14 +41,22 @@ namespace TheEscapeArtist
             }
         }
 
+        public void ChangePivotSpeed(float newSpeed)
+        {
+            foreach (PivotRotation pivot in pivots)
+            {
+                pivot.speed = newSpeed;
+            }
+        }
+
         public void Solver()
         {
+            ChangePivotSpeed(superSpeed);
 
             readCube.ReadState();
 
             // get the state of the cube as a string
             string moveString = cubeState.GetStateString();
-            print(moveString);
 
             // solve the cube
             string info = "";
@@ -55,12 +72,32 @@ namespace TheEscapeArtist
 
             //Automate the list
             Automate.moveList = solutionList;
-
-            print(info);
-
         }
 
-        List<string> StringToList(string solution)
+        public void Checkerboard()
+        {
+            Solver();
+
+            // Checkerboard algorithm from https://ruwix.com/the-rubiks-cube/rubiks-cube-patterns-algorithms/
+            Automate.moveList.AddRange(new List<string>() { "F2", "B2", "L2", 
+                                                            "R2", "U2", "D2" });
+        }
+
+        public void GiftBox()
+        {
+            Solver();
+
+            // Gift box algorithm from https://ruwix.com/the-rubiks-cube/rubiks-cube-patterns-algorithms/
+            Automate.moveList.AddRange(new List<string>() { "U", "B2", "R2", 
+                                                            "B2", "L2", "F2", 
+                                                            "R2", "D'", "F2", 
+                                                            "L2", "B", "F'", 
+                                                            "L", "F2", "D", 
+                                                            "U'", "R2", "F'", 
+                                                            "L'", "R'" });
+        }
+
+        private List<string> StringToList(string solution)
         {
             List<string> solutionList = new List<string>(solution.Split(new string[] { " " }, System.StringSplitOptions.RemoveEmptyEntries));
             return solutionList;

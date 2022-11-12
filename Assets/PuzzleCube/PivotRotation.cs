@@ -8,6 +8,14 @@ namespace TheEscapeArtist
     // https://www.megalomobile.com/lets-make-and-solve-a-rubiks-cube-in-unity/
     public class PivotRotation : MonoBehaviour
     {
+        #region Private Serializable Fields
+
+        [SerializeField] private float sensitivity = 0.4f;
+
+        public float speed = 300f;
+
+        #endregion
+
         #region Private Fields
 
         private List<GameObject> activeSide;
@@ -16,8 +24,6 @@ namespace TheEscapeArtist
         private bool dragging = false;
 
         private bool autoRotating = false;
-        private float sensitivity = 0.4f;
-        private float speed = 300f;
         private Vector3 rotation;
 
         private Quaternion targetQuaternion;

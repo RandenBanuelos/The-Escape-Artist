@@ -21,7 +21,7 @@ namespace TheEscapeArtist
 
         private InventoryManager inventoryCache;
 
-        private MenuManager menuCache;
+        private PauseMenu pauseMenuCache;
 
         private ItemInspector inspectorCache;
 
@@ -30,6 +30,8 @@ namespace TheEscapeArtist
         private InteractionController interactionCache;
 
         private PocketWatch pocketWatchCache;
+
+        private PuzzleCubeManager puzzleCubeManagerCache;
 
         private bool collectedAllCaches = false;
 
@@ -45,7 +47,25 @@ namespace TheEscapeArtist
                 return;
             }
 
-            if (!menuCache.IsInMenu)
+            if (puzzleCubeManagerCache.PuzzleCubeIsOpen && !pauseMenuCache.IsPaused && !inspectorCache.IsInspecting && !stereoscopeCache.IsViewing)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Debug.Log("InputManager.Update(): Closing puzzle cube...");
+                    puzzleCubeManagerCache.ClosePuzzleCube();
+                }
+            }
+
+            else if (!puzzleCubeManagerCache.PuzzleCubeIsOpen && !inspectorCache.IsInspecting && !stereoscopeCache.IsViewing)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Debug.Log("InputManager.Update(): Opening / closing pause menu...");
+                    pauseMenuCache.PauseUnpause();
+                }
+            }
+
+            if (!pauseMenuCache.IsPaused)
             {
                 if (!inspectorCache.IsInspecting)
                 {
@@ -63,7 +83,6 @@ namespace TheEscapeArtist
                             }
                         }
                     }
-
                     else if (inventoryCache.IsInInventory(pocketWatch) && !inventoryCache.IsInInventory(stereoscope))
                     {
                         if (Input.GetKeyDown(KeyCode.E))
@@ -82,19 +101,9 @@ namespace TheEscapeArtist
                 }
             }
 
-            /*if (!inspectorCache.IsInspecting && !stereoscopeCache.IsViewing)
-            {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    if (menuCache.IsInMenu)
-                        menuCache.ClosePauseMenu();
-                    else
-                        menuCache.OpenPauseMenu();
-                }
-            }*/
-
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                Debug.Log("InputManager.Update(): Toggling pause reminder...");
                 pauseReminder.SetActive(!pauseReminder.activeSelf);
             }
         }
@@ -108,8 +117,8 @@ namespace TheEscapeArtist
             if (!inventoryCache)
                 inventoryCache = InventoryManager.Instance;
 
-            if (!menuCache)
-                menuCache = MenuManager.Instance;
+            if (!pauseMenuCache)
+                pauseMenuCache = PauseMenu.Instance;
 
             if (!inspectorCache)
                 inspectorCache = ItemInspector.Instance;
@@ -123,7 +132,10 @@ namespace TheEscapeArtist
             if (!pocketWatchCache)
                 pocketWatchCache = PocketWatch.Instance;
 
-            if (inventoryCache && menuCache && inspectorCache && stereoscopeCache && interactionCache && pocketWatchCache)
+            if (!puzzleCubeManagerCache)
+                puzzleCubeManagerCache = PuzzleCubeManager.Instance;
+
+            if (inventoryCache && pauseMenuCache && inspectorCache && stereoscopeCache && interactionCache && pocketWatchCache && puzzleCubeManagerCache)
                 collectedAllCaches = true;
         }
 

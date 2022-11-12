@@ -22,6 +22,8 @@ namespace TheEscapeArtist
 
         private ReadCube readCube;
 
+        private SolveTwoPhase solver;
+
         #endregion
 
         #region MonoBehaviour Callbacks
@@ -30,6 +32,7 @@ namespace TheEscapeArtist
         {
             readCube = FindObjectOfType<ReadCube>();
             cubeState = FindObjectOfType<CubeState>();
+            solver = FindObjectOfType<SolveTwoPhase>();
         }
 
         private void Update()
@@ -41,20 +44,20 @@ namespace TheEscapeArtist
 
                 // raycast from the mouse towards the cube to see if a face is hit  
                 RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray ray = screenPointCamera.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit, 100.0f, layerMask))
                 {
                     GameObject face = hit.collider.gameObject;
                     // Make a list of all the sides (lists of face GameObjects)
                     List<List<GameObject>> cubeSides = new List<List<GameObject>>()
-                {
-                    cubeState.up,
-                    cubeState.down,
-                    cubeState.left,
-                    cubeState.right,
-                    cubeState.front,
-                    cubeState.back
-                };
+                    {
+                        cubeState.up,
+                        cubeState.down,
+                        cubeState.left,
+                        cubeState.right,
+                        cubeState.front,
+                        cubeState.back
+                    };
                     // If the face hit exists within a side
                     foreach (List<GameObject> cubeSide in cubeSides)
                     {
@@ -62,6 +65,10 @@ namespace TheEscapeArtist
                         {
                             //Pick it up
                             cubeState.PickUp(cubeSide);
+
+                            // Adjust user rotation speed
+                            solver.ChangePivotSpeed(300f);
+
                             //start the side rotation logic
                             cubeSide[4].transform.parent.GetComponent<PivotRotation>().Rotate(cubeSide);
                         }

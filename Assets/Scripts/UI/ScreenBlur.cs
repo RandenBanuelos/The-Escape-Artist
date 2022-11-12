@@ -16,11 +16,21 @@ namespace TheEscapeArtist
 
         #endregion
 
+        #region Private Fields
+
+        private DepthOfField depthOfField;
+
+        private float originalDOF;
+
+        #endregion
+
         #region MonoBehaviour Callbacks
 
         private void Start()
         {
-            // ToggleBlur(false);
+            volume.profile.TryGetSettings(out depthOfField);
+            originalDOF = depthOfField.focusDistance.value;
+            ToggleBlur(false);
         }
 
         #endregion
@@ -29,10 +39,10 @@ namespace TheEscapeArtist
 
         public void ToggleBlur(bool isActivated)
         {
-            float volumeAlpha = isActivated ? 1f : 0f;
+            float blurValue = isActivated ? 0.1f : originalDOF;
             float darkenAlpha = isActivated ? 0.5f : 0f;
 
-            volume.weight = volumeAlpha;
+            depthOfField.focusDistance.value = blurValue;
             var imageColor = darken.color;
             imageColor.a = darkenAlpha;
             darken.color = imageColor;
