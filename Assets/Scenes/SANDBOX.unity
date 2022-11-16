@@ -10361,7 +10361,7 @@ MonoBehaviour:
   shaderData_RingCount:
   - 3
   shaderData_Phase:
-  - 1.0712788
+  - 14.440591
   shaderData_Frequency:
   - 10
   shaderData_Smooth:
@@ -10638,7 +10638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8526950944274827067, guid: f74a083b675341548af130f1236cfb9c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f74a083b675341548af130f1236cfb9c, type: 3}
@@ -27632,6 +27632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuzzleCubeHouse1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67f7d87b74bb0aa41913698a25f152d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6070301794754409480, guid: 67f7d87b74bb0aa41913698a25f152d4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0437388
@@ -34648,7 +34652,7 @@ PrefabInstance:
     - target: {fileID: 8827615877882729125, guid: 5460e6298a12be34abb7075821a49713, type: 3}
       propertyPath: voiceClip
       value: 
-      objectReference: {fileID: 11400000, guid: 51edc5c2160316e418545f28a3137e18, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8827615877882729125, guid: 5460e6298a12be34abb7075821a49713, type: 3}
       propertyPath: pressDelay
       value: 27
@@ -35284,6 +35288,10 @@ PrefabInstance:
     - target: {fileID: 5140551362814535466, guid: 4fbc6c3ce5d31e74cb138b6c93ecbd3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: TheEscapeArtist.PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135977404252075424, guid: 4fbc6c3ce5d31e74cb138b6c93ecbd3b, type: 3}
+      propertyPath: m_IsOn
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7749188765229436856, guid: 4fbc6c3ce5d31e74cb138b6c93ecbd3b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -45666,7 +45674,7 @@ MonoBehaviour:
   phaseSpeed: 2
   smooth: 3
   drawInEditor: 1
-  currentPhase: 1.7379456
+  currentPhase: 14.524746
 --- !u!4 &1966415063
 Transform:
   m_ObjectHideFlags: 0
