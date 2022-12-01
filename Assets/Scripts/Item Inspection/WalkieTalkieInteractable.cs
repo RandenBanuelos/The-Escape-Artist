@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TheEscapeArtist
 {
-    public class CassettePlayerInteractable : InteractableBase
+    public class WalkieTalkieInteractable : InteractableBase
     {
         [SerializeField] private FrontDoor frontDoor;
 
@@ -13,7 +13,7 @@ namespace TheEscapeArtist
             base.OnInteract();
 
             if (VoiceClip && VoiceActingManager.Instance)
-                VoiceActingManager.Instance.Say(VoiceClip, true);
+                VoiceActingManager.Instance.Say(VoiceClip);
 
             frontDoor.OpenDoor();
 

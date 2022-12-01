@@ -10,6 +10,9 @@ public class FPSController : PortalTraveller {
     [SerializeField] private ItemInspector itemInspector;
     [SerializeField] private PauseMenu pauseMenu;
 
+    [SerializeField] private Vector3 startingPosition;
+    [SerializeField] private Vector3 startingRotation;
+
     public float walkSpeed = 3;
     public float runSpeed = 6;
     public float smoothMoveTime = 0.1f;
@@ -54,6 +57,16 @@ public class FPSController : PortalTraveller {
         smoothYaw = yaw;
         smoothPitch = pitch;
         smoothPitch = pitch;
+
+        Vector3 loadedPosition = ES3.Load<Vector3>("currentPosition", startingPosition);
+
+        if (loadedPosition != Vector3.zero)
+        {
+            transform.position = loadedPosition;
+        }
+
+        Vector3 rotation = ES3.Load<Vector3>("currentRotation", startingRotation);
+        StereoscopeAdjust(rotation);
     }
 
     void Update () {
@@ -127,7 +140,6 @@ public class FPSController : PortalTraveller {
             transform.eulerAngles = Vector3.up * smoothYaw;
             cam.transform.localEulerAngles = Vector3.right * smoothPitch;
         }
-
     }
 
     public override void Teleport (Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot) {
@@ -168,8 +180,8 @@ public class FPSController : PortalTraveller {
 
     private bool MoveCheck()
     {
-        if (StereoscopeView.Instance && PuzzleCubeManager.Instance)
-            return !itemInspector.IsInspecting && !StereoscopeView.Instance.IsViewing && !pauseMenu.IsPaused && !PuzzleCubeManager.Instance.PuzzleCubeIsOpen;
+        if (StereoscopeView.Instance && PuzzleCubeManager.Instance && NewspaperClippingManager.Instance)
+            return !itemInspector.IsInspecting && !StereoscopeView.Instance.IsViewing && !pauseMenu.IsPaused && !PuzzleCubeManager.Instance.PuzzleCubeIsOpen && !NewspaperClippingManager.Instance.NewspaperIsActive;
         return !itemInspector.IsInspecting && !pauseMenu.IsPaused;
     }
 }

@@ -60,6 +60,16 @@ namespace TheEscapeArtist
 
         #endregion
 
+        #region MonoBehaviour Callbacks
+
+        // TODO: DELETE LATER IN CASE OF SOFTLOCKS
+        private void OnApplicationQuit()
+        {
+            SaveGame();
+        }
+
+        #endregion
+
         #region Public Methods
 
         public void PauseUnpause()
@@ -104,6 +114,7 @@ namespace TheEscapeArtist
 
         public void QuitToMainMenu()
         {
+            SaveGame();
             StartCoroutine(LoadMain());
         }
 
@@ -129,6 +140,14 @@ namespace TheEscapeArtist
 
                 yield return null;
             }
+        }
+
+        private void SaveGame()
+        {
+            ES3.Save("currentPosition", playerController.transform.position);
+            ES3.Save("currentRotation", playerController.transform.localEulerAngles);
+            InventoryManager.Instance.SaveInventory();
+            HideRevealManager.Instance.SaveHideRevealChanges();
         }
 
         #endregion

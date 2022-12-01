@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8311edd2791c14e49b21c14410f8311a, type: 3}
+  m_Name: CamelotLand_Renovation
+  m_EditorClassIdentifier: 
+  Headline: Camelot Land announces sci-fi renovation
+  Date: Thursday, December 4, 1980
+  Content: James Anderson, CEO of local medieval-themed amusement park Camelot Land,
+    announced Wednesday that the park would be undergoing a major thematic renovation
+    over the next year. In the wake of several science fiction blockbusters grabbing
+    the attention of Americans, the decades-old park will be reinventing itself as
+    a futuristic utopia, inspired by pulp science fiction novels and atomic age art.
+    Longtime contractor Plausitron Engineering will be constructing new rides for
+    Camelot Land with the latest advancements in ride technology, spearheaded by
+    lead engineer Jamison E. Phillips. "This is an incredibly exciting time," said
+    Phillips, "I can't wait for people to see what we're making this time next year."

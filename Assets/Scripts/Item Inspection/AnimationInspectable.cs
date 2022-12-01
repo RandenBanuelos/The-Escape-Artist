@@ -26,6 +26,8 @@ namespace TheEscapeArtist
 
         private Outline outline;
 
+        private bool alreadyPlayedVoiceClip = false;
+
         #endregion
 
         private void Start()
@@ -57,8 +59,9 @@ namespace TheEscapeArtist
             if (sfxSource)
                 sfxSource.Play();
 
-            if (VoiceClip && VoiceActingManager.Instance)
+            if (VoiceClip && !alreadyPlayedVoiceClip && VoiceActingManager.Instance)
             {
+                alreadyPlayedVoiceClip = true;
                 VoiceActingManager.Instance.Say(VoiceClip);
             }
 

@@ -105,7 +105,11 @@ namespace TheEscapeArtist
 
                 if (buttonAnim)
                 {
-                    Invoke("ClearTrigger('PressButton')", .1f);
+                    Invoke("ClearTrigger('PressButton')", 1f);
+                }
+
+                if (pressDelay > 0)
+                {
                     Invoke(nameof(UnpressButton), pressDelay);
                 }
 
@@ -160,7 +164,7 @@ namespace TheEscapeArtist
                 sfxSource.Stop();
             
             isBeingPressed = false;
-            Invoke("ClearTrigger('UnpressButton')", .1f);
+            Invoke("ClearTrigger('UnpressButton')", 1f);
         }
     }
 }

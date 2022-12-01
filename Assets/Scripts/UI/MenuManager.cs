@@ -64,7 +64,6 @@ namespace TheEscapeArtist
             else
             {
                 _instance = this;
-                DontDestroyOnLoad(this);
             }
         }
 

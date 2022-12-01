@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8311edd2791c14e49b21c14410f8311a, type: 3}
+  m_Name: Subsonic_Incident
+  m_EditorClassIdentifier: 
+  Headline: Thirteen injured in Futuropolis coaster derailment
+  Date: Friday, October 15, 1982
+  Content: 'Wayne County police have reported that thirteen people, including four
+    children, were injured when a roller coaster train derailed at local amusement
+    park Futuropolis, formerly known as Camelot Land. Exact specifications have yet
+    to be released, but eyewitness testimonies stated that the train seemed to slip
+    off the tubular steel track, causing several carts to fall two stories onto the
+    sidewalk below. Broken pieces of the front cart''s undercarriage were found around
+    the derailment site, on-site reporters added.
+
+
+    This major accident comes
+    almost one year after an employee of Futuropolis'' ride manufacturer, Plausitron
+    Engineering''s Jamison E. Phillips, was acquitted of negligence charges after
+    a subordinate engineer was killed in a pendulum ride malfunction. Phillips was
+    also the lead engineer for Subsonic, the roller coaster the derailment occurred
+    on. Phillips declined to make a statement for the Rooster without the presence
+    of an attorney.
+
+'

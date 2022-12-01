@@ -10,6 +10,8 @@ namespace TheEscapeArtist
 
         public List<InventoryItem> items = new List<InventoryItem>();
 
+        public List<InventoryItem> allItems = new List<InventoryItem>();
+
         #endregion
 
         #region Singleton
@@ -29,7 +31,14 @@ namespace TheEscapeArtist
             else
             {
                 _instance = this;
-                DontDestroyOnLoad(this);
+            }
+        }
+
+        private void Start()
+        {
+            if (ES3.KeyExists("savedItems"))
+            {
+                items = ES3.Load<List<InventoryItem>>("savedItems");
             }
         }
 
@@ -50,6 +59,11 @@ namespace TheEscapeArtist
         public bool IsInInventory(InventoryItem item)
         {
             return items.Contains(item);
+        }
+
+        public void SaveInventory()
+        {
+            ES3.Save("savedItems", items);
         }
 
         #endregion

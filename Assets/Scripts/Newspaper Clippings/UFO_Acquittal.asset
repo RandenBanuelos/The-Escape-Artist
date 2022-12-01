@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8311edd2791c14e49b21c14410f8311a, type: 3}
+  m_Name: UFO_Acquittal
+  m_EditorClassIdentifier: 
+  Headline: Phillips acquitted on UFO negligence charges
+  Date: Friday, November 20, 1981
+  Content: 'After a months-long court battle, Plausitron engineer Jamison Phillips
+    has been found not guilty for the death of junior engineer Tony Vasquez. Vasquez
+    was severely injured after a UFO-themed ride of Phillips'' design and supervision
+    malfunctioned back in April, passing away shortly thereafter under medical care.
+    Coworkers took the stand to explain that Phillips and Vasquez had gotten into
+    an agitated disagreement two days prior to the UFO incident, with Phillips storming
+    out of the room and refusing to speak with Vasquez in the following days. These
+    arguments were not rare between the two, but this fight, in particular, seemed
+    particularly heated, said electrical engineer Marie Sousa. "We all knew Jamie
+    was working himself to death," said Sousa, "but that was no reason to lash out
+    at Tony like that".
+
+
+    Phillips'' defense attorney, Brian Hampton, argued
+    that although Phillips was in the wrong for being aggressive with his coworker,
+    he had no ill will towards Vasquez, stating that prolonged sleep deprivation
+    made him irritated. Phillips'' alibi stated that he was at local amusement park
+    Camelot Land collecting revised failsafe blueprints and batteries when he fell
+    asleep in his vehicle, only waking up after a frantic call alerted him to Vasquez''s
+    injury. These two factors led the jury to conclude that Vasquez''s death was
+    an unfortunate accident. "The jury should be ashamed of themselves," said Vasquez''s
+    mother, Guadalupe, "my son is dead and they let that monster escape just because
+    he needed a nap, this isn''t the end".
+
+'

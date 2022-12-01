@@ -65,6 +65,12 @@ namespace TheEscapeArtist
 
         private StereoscopeSlide currentSlide;
 
+        private HideRevealManager hrManager;
+
+        private CharacterController charController;
+
+        private FPSController fps;
+
         #endregion
 
         #region Singleton
@@ -90,6 +96,7 @@ namespace TheEscapeArtist
         private void Start()
         {
             view = viewAnchor.GetComponentInChildren<RawImage>();
+            hrManager = HideRevealManager.Instance;
 
             anchorStartingRotation = viewAnchor.localEulerAngles;
             anchorEndRotation = new Vector3(anchorStartingRotation.x, anchorStartingRotation.y, anchorStartingRotation.z + viewRotationAmount);
@@ -153,8 +160,24 @@ namespace TheEscapeArtist
             IsViewing = true;
             currentSlide = currentReel.Slides[lastIndex];
 
+            if (player == null)
+                player = GameObject.FindGameObjectWithTag("Player").transform;
+
+            if (charController == null)
+                charController = player.GetComponent<CharacterController>();
+            charController.enabled = false;
+
+            if (fps == null)
+                fps = player.GetComponent<FPSController>();
+
             if (!currentSlide.Scenery.activeSelf)
+            {
+                hrManager.AddHideRevealChange(currentSlide.Scenery.name, true);
                 currentSlide.Scenery.SetActive(true);
+            }
+
+            player.position = currentSlide.SpawnPosition.position;
+            fps.StereoscopeAdjust(currentSlide.SpawnPosition.eulerAngles);
 
             stereoscopeUI.SetActive(true);
             viewText.text = currentSlide.SlideDescription;
@@ -184,7 +207,13 @@ namespace TheEscapeArtist
                 viewAnchor.localEulerAngles = anchorStartingRotation;
 
                 pastScenery.SetActive(false);
+                hrManager.AddHideRevealChange(pastScenery.name, false);
+
                 currentSlide.Scenery.SetActive(true);
+                hrManager.AddHideRevealChange(currentSlide.Scenery.name, true);
+
+                player.position = currentSlide.SpawnPosition.position;
+                fps.StereoscopeAdjust(currentSlide.SpawnPosition.eulerAngles);
 
                 rotateOut = false;
                 isDoneRotatingView = false;
@@ -202,18 +231,11 @@ namespace TheEscapeArtist
                 isChangingToNextSlide = false;
                 rotateOut = false;
 
-                if (player == null)
-                    player = GameObject.FindGameObjectWithTag("Player").transform;
-
-                CharacterController charController = player.GetComponent<CharacterController>();
-                charController.enabled = false;
-                player.position = currentSlide.SpawnPosition.position;
-
-                FPSController fps = player.GetComponent<FPSController>();
-                fps.StereoscopeAdjust(currentSlide.SpawnPosition.eulerAngles);
-
                 if (house.activeSelf)
+                {
+                    hrManager.AddHideRevealChange(house.gameObject.name, false);
                     house.SetActive(false);
+                }
 
                 IsViewing = false;
                 charController.enabled = true;

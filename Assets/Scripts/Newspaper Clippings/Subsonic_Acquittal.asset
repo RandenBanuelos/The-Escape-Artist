@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8311edd2791c14e49b21c14410f8311a, type: 3}
+  m_Name: Subsonic_Acquittal
+  m_EditorClassIdentifier: 
+  Headline: Phillips acquitted from roller coaster injuries
+  Date: Tuesday, February 1, 1983
+  Content: The Wayne County Superior Court has ruled that Jamison Phillips, a Wooster
+    local and senior engineer for Plausitron Engineering, has been found not guilty
+    in relation to a roller coaster derailment at Futuropolis amusement park. Phillips
+    was sued by Madisonburg resident June Hendricks for injuries sustained by her
+    husband and three teenage children, who were on the Subsonic roller coaster when
+    their coaster train slipped off the track and crashed. Phillips' defense attorney
+    argued that Phillips, head designer for Subsonic, had vehemently opposed the
+    early opening of the ride, stating that several flaws in the train cart's undercarriage
+    needed to be addressed before safe operation could ensue. Dated blueprints of
+    the improved undercarriage design by Phillips corroborated this statement, coupled
+    with the fact that the ride was operating on wet tracks from rain the night before,
+    which Phillips detailed would be a safety hazard in his operations manual. Albert
+    Weckes, a senior administrator from Futuropolis, took the stand earlier last
+    week to refute this argument, saying that Plausitron's outreach team assured
+    him the ride would have all failsafes implemented ahead of schedule.

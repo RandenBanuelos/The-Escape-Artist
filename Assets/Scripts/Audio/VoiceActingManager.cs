@@ -15,19 +15,10 @@ namespace TheEscapeArtist
 
         [SerializeField] private TMP_Text subtitles;
 
-        [Header("Cassette Player SFX")]
-        [SerializeField] private AudioClip insertTape;
+        [Header("Walkie Talkie SFX")]
+        [SerializeField] private AudioClip walkieTalkieOn;
 
-        [SerializeField] private AudioClip pressPlay;
-
-        [SerializeField] private AudioClip pressStop;
-
-        [SerializeField] private AudioClip ejectTape;
-
-        [Header("Glitch SFX")]
-        [SerializeField] private AudioClip glitchEnter;
-
-        [SerializeField] private AudioClip glitchExit;
+        [SerializeField] private AudioClip walkieTalkieOff;
 
         #endregion
 
@@ -36,8 +27,6 @@ namespace TheEscapeArtist
         private bool isSpeaking = false;
 
         private Queue<VoiceClip> voiceClipQueue = new Queue<VoiceClip>();
-
-        private Queue<bool> actualTapeQueue = new Queue<bool>();
 
         #endregion
 
@@ -58,7 +47,6 @@ namespace TheEscapeArtist
             else
             {
                 _instance = this;
-                DontDestroyOnLoad(this);
                 ClearSubtitles();
             }
         }
@@ -72,9 +60,8 @@ namespace TheEscapeArtist
             if (!isSpeaking && voiceClipQueue.Count > 0)
             {
                 VoiceClip nextVoiceClip = voiceClipQueue.Dequeue();
-                bool isActualTape = actualTapeQueue.Dequeue();
 
-                StartCoroutine(PlayCassettePlayer(nextVoiceClip, isActualTape));
+                StartCoroutine(PlayWalkieTalkie(nextVoiceClip));
             }
         }
 
@@ -82,10 +69,9 @@ namespace TheEscapeArtist
 
         #region Public Methods
 
-        public void Say(VoiceClip voiceClip, bool isActualTape = false)
+        public void Say(VoiceClip voiceClip)
         {
             voiceClipQueue.Enqueue(voiceClip);
-            actualTapeQueue.Enqueue(isActualTape);
         }
 
         public bool IsSpeaking => isSpeaking;
@@ -99,43 +85,19 @@ namespace TheEscapeArtist
 
         #region Private Methods
 
-        private IEnumerator PlayCassettePlayer(VoiceClip voiceClip, bool isActualTape)
+        private IEnumerator PlayWalkieTalkie(VoiceClip voiceClip)
         {
             isSpeaking = true;
 
-            if (isActualTape)
-            {
-                source.PlayOneShot(insertTape);
-                yield return new WaitForSeconds(insertTape.length);
-
-                yield return new WaitForSecondsRealtime(0.5f);
-
-                source.PlayOneShot(pressPlay);
-                yield return new WaitForSeconds(pressPlay.length);
-            }
-            else
-            {
-                source.PlayOneShot(glitchEnter);
-                yield return new WaitForSeconds(insertTape.length);
-            }
+            source.PlayOneShot(walkieTalkieOn);
+            yield return new WaitForSeconds(walkieTalkieOn.length);
 
             source.PlayOneShot(voiceClip.Clip);
             StartCoroutine(PlaySubtitles(voiceClip.Subtitles));
             yield return new WaitForSeconds(voiceClip.Clip.length);
 
-            if (isActualTape)
-            {
-                source.PlayOneShot(pressStop);
-                yield return new WaitForSeconds(pressStop.length);
-
-                source.PlayOneShot(ejectTape);
-                yield return new WaitForSeconds(ejectTape.length);
-            }
-            else
-            {
-                source.PlayOneShot(glitchExit);
-                yield return new WaitForSeconds(pressStop.length);
-            }
+            source.PlayOneShot(walkieTalkieOff);
+            yield return new WaitForSeconds(walkieTalkieOff.length);
 
             isSpeaking = false;
         }

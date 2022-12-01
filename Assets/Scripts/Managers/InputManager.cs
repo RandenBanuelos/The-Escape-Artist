@@ -33,6 +33,8 @@ namespace TheEscapeArtist
 
         private PuzzleCubeManager puzzleCubeManagerCache;
 
+        private NewspaperClippingManager newspaperClippingManagerCache;
+
         private bool collectedAllCaches = false;
 
         #endregion
@@ -47,7 +49,11 @@ namespace TheEscapeArtist
                 return;
             }
 
-            if (puzzleCubeManagerCache.PuzzleCubeIsOpen && !pauseMenuCache.IsPaused && !inspectorCache.IsInspecting && !stereoscopeCache.IsViewing)
+            if (puzzleCubeManagerCache.PuzzleCubeIsOpen && 
+                !pauseMenuCache.IsPaused && 
+                !inspectorCache.IsInspecting && 
+                !stereoscopeCache.IsViewing &&
+                !newspaperClippingManagerCache.NewspaperIsActive)
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
@@ -56,13 +62,24 @@ namespace TheEscapeArtist
                 }
             }
 
-            else if (!puzzleCubeManagerCache.PuzzleCubeIsOpen && !inspectorCache.IsInspecting && !stereoscopeCache.IsViewing)
+            else if (!puzzleCubeManagerCache.PuzzleCubeIsOpen && 
+                    !inspectorCache.IsInspecting && 
+                    !stereoscopeCache.IsViewing)
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Debug.Log("InputManager.Update(): Opening / closing pause menu...");
-                    pauseMenuCache.PauseUnpause();
+                    if (newspaperClippingManagerCache.NewspaperIsActive)
+                    {
+                        Debug.Log("InputManager.Update(): Closing newspaper panel...");
+                        newspaperClippingManagerCache.HideNewspaper();
+                    }
+                    else
+                    {
+                        Debug.Log("InputManager.Update(): Opening / closing pause menu...");
+                        pauseMenuCache.PauseUnpause();
+                    }
                 }
+                              
             }
 
             if (!pauseMenuCache.IsPaused)
@@ -135,8 +152,20 @@ namespace TheEscapeArtist
             if (!puzzleCubeManagerCache)
                 puzzleCubeManagerCache = PuzzleCubeManager.Instance;
 
-            if (inventoryCache && pauseMenuCache && inspectorCache && stereoscopeCache && interactionCache && pocketWatchCache && puzzleCubeManagerCache)
+            if (!newspaperClippingManagerCache)
+                newspaperClippingManagerCache = NewspaperClippingManager.Instance;
+
+            if (inventoryCache && 
+                pauseMenuCache && 
+                inspectorCache && 
+                stereoscopeCache && 
+                interactionCache && 
+                pocketWatchCache && 
+                puzzleCubeManagerCache &&
+                newspaperClippingManagerCache)
+            {
                 collectedAllCaches = true;
+            }
         }
 
         #endregion

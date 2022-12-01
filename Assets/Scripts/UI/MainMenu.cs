@@ -17,9 +17,34 @@ namespace TheEscapeArtist
 
         [SerializeField] private GameObject optionsScreen;
 
+        [SerializeField] private GameObject confirmNewGameScreen;
+
         [SerializeField] private GameObject loadingScreen, loadingIcon;
 
+        [SerializeField] private GameObject continueButton;
+
         [SerializeField] private TMP_Text loadingText;
+
+        #endregion
+
+        #region Private Fields
+
+        private bool hasStartedGameBefore = false;
+
+        #endregion
+
+        #region MonoBehaviour Callbacks
+
+        private void Awake()
+        {
+            if (loadingScreen.activeSelf)
+                loadingScreen.SetActive(false);
+
+            hasStartedGameBefore = ES3.Load<bool>("hasStartedGameBefore", false);
+
+            if (hasStartedGameBefore)
+                continueButton.SetActive(true);
+        }
 
         #endregion
 
@@ -27,7 +52,37 @@ namespace TheEscapeArtist
 
         public void StartGame()
         {
+            if (hasStartedGameBefore)
+            {
+                OpenConfirmNewGameScreen();
+            }
+            else
+            {
+                ES3.Save("hasStartedGameBefore", true);
+                ContinueGame();
+            }
+        }
+
+        public void ContinueGame()
+        {
             StartCoroutine(LoadLevel());
+        }
+
+        public void NewGame()
+        {
+            string[] keys = ES3.GetKeys();
+            foreach (string key in keys)
+            {
+                ES3.DeleteKey(key);
+            }
+
+            ES3.Save("hasStartedGameBefore", true);
+            ContinueGame();
+        }
+
+        public void CloseConfirmNewGameScreen()
+        {
+            confirmNewGameScreen.SetActive(false);
         }
 
         public void OpenOptions()
@@ -49,6 +104,11 @@ namespace TheEscapeArtist
         #endregion
 
         #region Private Methods
+
+        private void OpenConfirmNewGameScreen()
+        {
+            confirmNewGameScreen.SetActive(true);
+        }
 
         private IEnumerator LoadLevel()
         {
