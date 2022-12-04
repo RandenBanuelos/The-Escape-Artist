@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 63d92fc5ecd9ce2438120667b2faa1ae
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 95a5a1553ec5d394e99731f9d9fa40ed, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Textures/LCAD Substance Files/Escape_Artist_Textures001.01.sbsar

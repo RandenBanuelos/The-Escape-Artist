@@ -17,6 +17,8 @@ namespace TheEscapeArtist
 
         [SerializeField] private GameObject optionsScreen;
 
+        [SerializeField] private GameObject creditsScreen;
+
         [SerializeField] private GameObject confirmNewGameScreen;
 
         [SerializeField] private GameObject loadingScreen, loadingIcon;
@@ -24,6 +26,8 @@ namespace TheEscapeArtist
         [SerializeField] private GameObject continueButton;
 
         [SerializeField] private TMP_Text loadingText;
+
+        [SerializeField] private CreditsScroll scroll;
 
         #endregion
 
@@ -93,6 +97,18 @@ namespace TheEscapeArtist
         public void CloseOptions()
         {
             optionsScreen.SetActive(false);
+        }
+
+        public void OpenCredits()
+        {
+            creditsScreen.SetActive(true);
+            scroll.Scroll();
+        }
+
+        public void CloseCredits()
+        {
+            scroll.StopScroll();
+            creditsScreen.SetActive(false);
         }
 
         public void QuitGame()
