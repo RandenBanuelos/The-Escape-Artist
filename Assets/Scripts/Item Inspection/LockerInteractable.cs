@@ -48,8 +48,6 @@ namespace TheEscapeArtist
             stereoscope.SetActive(true);
             gameObject.layer = LayerMask.NameToLayer("Default");
 
-            InventoryManager.Instance.RemoveFromInventory(stereoscopeItem);
-
             lockerDoor.SetTrigger("CloseDoor");
             yield return new WaitForSeconds(3f);
             lockerDoor.ResetTrigger("CloseDoor");
