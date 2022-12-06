@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2f5e140f61abfc94b8f40427c6ad110a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: bf87ccf7992555d4ba151b028a1f1705, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Textures/LCAD Substance Files/damast_muster_gold_black.sbsar

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 99dffed9af28ee944990f67820c2dcca
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 73b3ffd352066814c8c6cd23c14df5aa, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Textures/LCAD Substance Files/plat-tz12.sbsar

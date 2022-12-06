@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9c3bee6d9a09f5141ac402669300a8a8
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 368bedeaab00b8b4e992a6eabbba7e4f, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Textures/LCAD Substance Files/smooth_wood.sbsar

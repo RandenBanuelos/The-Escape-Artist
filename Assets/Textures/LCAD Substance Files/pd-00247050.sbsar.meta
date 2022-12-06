@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fd844d1d2c35cab41b4872ff794d4c8b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 40472795af319574a8350e3bae46ecef, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Textures/LCAD Substance Files/pd-00247050.sbsar

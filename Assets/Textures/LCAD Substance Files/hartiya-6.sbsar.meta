@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7ad3e7a7bbe35624382621ea1ff228e3
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: f44f55a8d7cce2f40a484e06297d753d, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Textures/LCAD Substance Files/hartiya-6.sbsar
