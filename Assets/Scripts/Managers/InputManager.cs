@@ -116,6 +116,10 @@ namespace TheEscapeArtist
                 {
                     StartCoroutine(stereoscopeCache.NextSlide());
                 }
+                else if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    StartCoroutine(stereoscopeCache.PreviousSlide());
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Q))

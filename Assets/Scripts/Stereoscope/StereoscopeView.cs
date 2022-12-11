@@ -43,7 +43,7 @@ namespace TheEscapeArtist
 
         private float timer = 0f;
 
-        private bool isChangingToNextSlide = false;
+        private bool isChangingSlides = false;
 
         private bool isDoneRotatingView;
 
@@ -114,7 +114,7 @@ namespace TheEscapeArtist
 
         private void FixedUpdate()
         {
-            if (isChangingToNextSlide)
+            if (isChangingSlides)
             {
                 if (rotateOut)
                 {
@@ -186,11 +186,11 @@ namespace TheEscapeArtist
 
         public IEnumerator NextSlide()
         {
-            if (!isChangingToNextSlide && IsViewing)
+            if (!isChangingSlides && IsViewing)
             {
                 GameObject pastScenery = currentSlide.Scenery;
                 
-                isChangingToNextSlide = true;
+                isChangingSlides = true;
                 lastIndex = lastIndex + 1 >= currentReel.Slides.Length ? 0 : lastIndex + 1;
                 currentSlide = currentReel.Slides[lastIndex];
 
@@ -219,16 +219,55 @@ namespace TheEscapeArtist
                 isDoneRotatingView = false;
                 yield return new WaitUntil(() => isDoneRotatingView);
 
-                isChangingToNextSlide = false;
+                isChangingSlides = false;
+            }
+        }
+
+        public IEnumerator PreviousSlide()
+        {
+            if (!isChangingSlides && IsViewing)
+            {
+                GameObject pastScenery = currentSlide.Scenery;
+
+                isChangingSlides = true;
+                lastIndex = lastIndex - 1 < 0 ? currentReel.Slides.Length - 1 : lastIndex - 1;
+                currentSlide = currentReel.Slides[lastIndex];
+
+                rotateOut = true;
+                isDoneRotatingView = false;
+                yield return new WaitUntil(() => isDoneRotatingView);
+
+                SetView(currentSlide.CameraTexture);
+                viewText.text = currentSlide.SlideDescription;
+                viewText.transform.position = viewTextStartingPosition;
+
+                coverAnchor.localEulerAngles = anchorStartingRotation;
+
+                viewAnchor.localEulerAngles = anchorStartingRotation;
+
+                pastScenery.SetActive(false);
+                hrManager.AddHideRevealChange(pastScenery.name, false);
+
+                currentSlide.Scenery.SetActive(true);
+                hrManager.AddHideRevealChange(currentSlide.Scenery.name, true);
+
+                player.position = currentSlide.SpawnPosition.position;
+                fps.StereoscopeAdjust(currentSlide.SpawnPosition.eulerAngles);
+
+                rotateOut = false;
+                isDoneRotatingView = false;
+                yield return new WaitUntil(() => isDoneRotatingView);
+
+                isChangingSlides = false;
             }
         }
 
         public IEnumerator CloseView()
         {
-            if (!isChangingToNextSlide && IsViewing)
+            if (!isChangingSlides && IsViewing)
             {
                 timer = 0f;
-                isChangingToNextSlide = false;
+                isChangingSlides = false;
                 rotateOut = false;
 
                 if (house.activeSelf)
@@ -247,7 +286,7 @@ namespace TheEscapeArtist
 
         public void SetReel(StereoscopeReel newReel)
         {
-            if (!IsViewing && !isChangingToNextSlide)
+            if (!IsViewing && !isChangingSlides)
             {
                 currentReel = newReel;
             }

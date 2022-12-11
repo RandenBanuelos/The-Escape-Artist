@@ -60,16 +60,6 @@ namespace TheEscapeArtist
 
         #endregion
 
-        #region MonoBehaviour Callbacks
-
-        // TODO: DELETE LATER IN CASE OF SOFTLOCKS
-        private void OnApplicationQuit()
-        {
-            SaveGame();
-        }
-
-        #endregion
-
         #region Public Methods
 
         public void PauseUnpause()
@@ -84,6 +74,9 @@ namespace TheEscapeArtist
                 pauseMenuReminder.SetActive(false);
                 screenBlur.ToggleBlur(true);
 
+                if (VoiceActingManager.Instance.IsSpeaking)
+                    VoiceActingManager.Instance.PauseUnpauseVA(true);
+
                 pauseScreen.SetActive(true);
             }
             else
@@ -95,6 +88,9 @@ namespace TheEscapeArtist
                 Cursor.lockState = CursorLockMode.Locked;
                 Time.timeScale = 1f;
                 playerController.enabled = true;
+
+                if (VoiceActingManager.Instance.IsSpeaking)
+                    VoiceActingManager.Instance.PauseUnpauseVA(false);
 
                 IsPaused = false;
             }

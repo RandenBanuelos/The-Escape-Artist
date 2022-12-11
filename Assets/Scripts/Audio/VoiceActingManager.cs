@@ -74,6 +74,14 @@ namespace TheEscapeArtist
             voiceClipQueue.Enqueue(voiceClip);
         }
 
+        public void PauseUnpauseVA(bool toggle)
+        {
+            if (toggle)
+                source.Pause();
+            else
+                source.Play();
+        }
+
         public bool IsSpeaking => isSpeaking;
 
         public bool NotVoiceActing()
@@ -89,14 +97,17 @@ namespace TheEscapeArtist
         {
             isSpeaking = true;
 
-            source.PlayOneShot(walkieTalkieOn);
+            source.clip = walkieTalkieOn;
+            source.Play();
             yield return new WaitForSeconds(walkieTalkieOn.length);
 
-            source.PlayOneShot(voiceClip.Clip);
+            source.clip = voiceClip.Clip;
+            source.Play();
             StartCoroutine(PlaySubtitles(voiceClip.Subtitles));
             yield return new WaitForSeconds(voiceClip.Clip.length);
 
-            source.PlayOneShot(walkieTalkieOff);
+            source.clip = walkieTalkieOff;
+            source.Play();
             yield return new WaitForSeconds(walkieTalkieOff.length);
 
             isSpeaking = false;
