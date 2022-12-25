@@ -13,6 +13,8 @@ namespace TheEscapeArtist
 
         [Header("Base Data")]
         [SerializeField] private Transform player;
+        [SerializeField] private GameObject handheldObjects;
+        [SerializeField] private Animator stereoscopeAnim;
         [SerializeField] private GameObject stereoscopeUI;
         [SerializeField] private StereoscopeReel defaultReel;
         [SerializeField] private GameObject house;
@@ -155,10 +157,15 @@ namespace TheEscapeArtist
 
         #region Public Methods
 
-        public void OpenView()
+        public IEnumerator OpenView()
         {
             IsViewing = true;
             currentSlide = currentReel.Slides[lastIndex];
+
+            stereoscopeAnim.SetBool("Toggle", true);
+            yield return new WaitForSeconds(.15f);
+
+            handheldObjects.SetActive(false);
 
             if (player == null)
                 player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -275,12 +282,17 @@ namespace TheEscapeArtist
                     hrManager.AddHideRevealChange(house.gameObject.name, false);
                     house.SetActive(false);
                 }
-
+            
                 IsViewing = false;
                 charController.enabled = true;
 
                 yield return new WaitForSeconds(0.01f);
                 ResetView();
+
+                handheldObjects.SetActive(true);
+
+                stereoscopeAnim.SetBool("Toggle", false);
+                yield return new WaitForSeconds(.15f);
             }
         }
 

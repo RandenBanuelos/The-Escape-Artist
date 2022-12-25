@@ -92,7 +92,7 @@ namespace TheEscapeArtist
                         {
                             if (!stereoscopeCache.IsViewing)
                             {
-                                stereoscopeCache.OpenView();
+                                StartCoroutine(stereoscopeCache.OpenView());
                             }
                             else
                             {

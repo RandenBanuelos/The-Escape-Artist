@@ -15,6 +15,8 @@ namespace TheEscapeArtist
 
         [SerializeField] private TMP_Text subtitles;
 
+        [SerializeField] private Animator walkieTalkieAnim;
+
         [Header("Walkie Talkie SFX")]
         [SerializeField] private AudioClip walkieTalkieOn;
 
@@ -97,6 +99,8 @@ namespace TheEscapeArtist
         {
             isSpeaking = true;
 
+            walkieTalkieAnim.SetBool("Toggle", true);
+
             source.clip = walkieTalkieOn;
             source.Play();
             yield return new WaitForSeconds(walkieTalkieOn.length);
@@ -109,6 +113,8 @@ namespace TheEscapeArtist
             source.clip = walkieTalkieOff;
             source.Play();
             yield return new WaitForSeconds(walkieTalkieOff.length);
+
+            walkieTalkieAnim.SetBool("Toggle", false);
 
             isSpeaking = false;
         }

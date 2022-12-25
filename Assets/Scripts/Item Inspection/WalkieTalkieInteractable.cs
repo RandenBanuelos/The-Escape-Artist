@@ -8,6 +8,8 @@ namespace TheEscapeArtist
     {
         [SerializeField] private FrontDoor frontDoor;
 
+        [SerializeField] private GameObject walkieTalkie;
+
         public override void OnInteract()
         {
             base.OnInteract();
@@ -16,6 +18,8 @@ namespace TheEscapeArtist
                 VoiceActingManager.Instance.Say(VoiceClip);
 
             frontDoor.OpenDoor();
+
+            walkieTalkie.SetActive(true);
 
             this.gameObject.SetActive(false);
         }

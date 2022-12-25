@@ -11,6 +11,8 @@ namespace TheEscapeArtist
 
         [SerializeField] private DRMGameObject watchObject;
 
+        [SerializeField] private Animator pocketWatchAnim;
+
         [SerializeField] private SphereCollider nearbyColliders;
 
         [SerializeField] private float watchRange = 5f;
@@ -103,6 +105,8 @@ namespace TheEscapeArtist
                 isActive = !isActive;
                 isGrowingShrinking = true;
                 timer = 0f;
+
+                pocketWatchAnim.SetBool("Toggle", isInPast);
             }
         }
 
