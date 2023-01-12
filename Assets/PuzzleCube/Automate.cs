@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace TheEscapeArtist
 {
@@ -11,6 +12,8 @@ namespace TheEscapeArtist
         #region Public Static Fields
 
         public static List<string> moveList = new List<string>() { };
+
+        public Animator houseAnimator;
 
         #endregion
 
@@ -26,6 +29,23 @@ namespace TheEscapeArtist
 
         private ReadCube readCube;
 
+        private Dictionary<string, string> solveStringsToAnimTriggers = new Dictionary<string, string>
+        {
+            { "RUUBUULUUBBBRRRFFFURRUFFULLRDDFDDLDDBLFBLFBLFLLDBBDRRD", "OpenDiningRoom" },
+            { "UDUDUDUDURLRLRLRLRFBFBFBFBFDUDUDUDUDLRLRLRLRLBFBFBFBFB", "OpenKitchen" },
+            { "RRRRUURUFURFRRFFFFUFRUFFUUULLLDDLBDLBBBLLBDLBDDDDBBDBL", "OpenStairs" },
+            { "UBBUUBUUURUURRURRRFFFLFFLLFFFDFDDDDDLLLLLDLDDRRBRBBBBB", "OpenLibrary" },
+            { "DUDUUUDUDBRFBRFBRFRFLRFLRFLUDUDDDUDUFLBFLBFLBLBRLBRLBR", "OpenJacksonRoom" },
+        };
+
+        private int progressionThroughHouse = 0;
+
+        private string currentSolveString = "";
+
+        private List<string> solveStrings = new List<string>();
+
+        private bool houseIsAnimating = false;
+
         #endregion
 
         #region MonoBehaviour Callbacks
@@ -34,9 +54,13 @@ namespace TheEscapeArtist
         {
             cubeState = FindObjectOfType<CubeState>();
             readCube = FindObjectOfType<ReadCube>();
-        }
+            progressionThroughHouse = 0;
+            solveStrings = solveStringsToAnimTriggers.Keys.ToList();
+            currentSolveString = solveStrings[progressionThroughHouse];
+            houseIsAnimating = false;
+    }
 
-        private void Update()
+    private void Update()
         {
             if (moveList.Count > 0 && !CubeState.autoRotating && CubeState.started)
             {
@@ -45,6 +69,15 @@ namespace TheEscapeArtist
 
                 // Remove the move at the first index
                 moveList.Remove(moveList[0]);
+            }
+            else
+            {  
+                string currentCubeState = cubeState.GetStateString();
+                if (currentCubeState == currentSolveString && !houseIsAnimating)
+                {
+                    Progress();
+                    PuzzleCubeManager.Instance.ClosePuzzleCube();
+                }
             }
         }
 
@@ -151,6 +184,21 @@ namespace TheEscapeArtist
             // Automatically rotate the side by the angle
             PivotRotation pr = side[4].transform.parent.GetComponent<PivotRotation>();
             pr.StartAutoRotate(side, angle);
+        }
+
+        private void Progress()
+        {
+            houseIsAnimating = true;
+            houseAnimator.SetTrigger(solveStringsToAnimTriggers[currentSolveString]);
+            Invoke(nameof(ClearHouseAnimatorTrigger), .1f);           
+        }
+
+        private void ClearHouseAnimatorTrigger()
+        {
+            houseAnimator.ResetTrigger(solveStringsToAnimTriggers[currentSolveString]);
+            progressionThroughHouse += 1;
+            currentSolveString = solveStrings[progressionThroughHouse];
+            houseIsAnimating = false;
         }
 
         #endregion

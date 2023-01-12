@@ -131,10 +131,12 @@ namespace TheEscapeArtist
 
                     if (adjustCache.localEulerAngles - adjustment.rotationAdjustment != Vector3.zero) // Adjust in secondary rotation
                     {
+                        Debug.Log($"Adjsutment: Rotating to {adjustment.rotationAdjustment}");
                         adjustment.itemToAdjust.DOLocalRotate(adjustment.rotationAdjustment, adjustment.rotationTime);
                     }
                     else
                     {
+                        Debug.Log($"Original: Rotating to {original.rotationAdjustment}");
                         adjustment.itemToAdjust.DOLocalRotate(original.rotationAdjustment, adjustment.rotationTime);
                     }
 

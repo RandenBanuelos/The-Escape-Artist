@@ -97,6 +97,40 @@ namespace TheEscapeArtist
                                                             "L'", "R'" });
         }
 
+        public void Staircase()
+        {
+            Solver();
+
+            // Staircase algorithm from https://ruwix.com/the-rubiks-cube/rubiks-cube-patterns-algorithms/
+            Automate.moveList.AddRange(new List<string>() { "L2", "F2", "D'",
+                                                            "L2", "B2", "D'",
+                                                            "U'", "R2", "B2",
+                                                            "U'", "L'", "B2",
+                                                            "L", "D", "L",
+                                                            "B'", "D", "L'",
+                                                            "U" });
+        }
+
+        public void CubedCube()
+        {
+            Solver();
+
+            // Cubed cube algorithm from https://ruwix.com/the-rubiks-cube/rubiks-cube-patterns-algorithms/
+            Automate.moveList.AddRange(new List<string>() { "U'", "L'", "U'",
+                                                            "F'", "R2", "B'",
+                                                            "R", "F", "U",
+                                                            "B2", "U", "B'",
+                                                            "L", "U'", "F",
+                                                            "U", "R", "F'" });
+        }
+
+        public void BasicAlgorithm()
+        {
+            Solver();
+
+            Automate.moveList.AddRange(new List<string>() { "U", "D", "L" });
+        }
+
         private List<string> StringToList(string solution)
         {
             List<string> solutionList = new List<string>(solution.Split(new string[] { " " }, System.StringSplitOptions.RemoveEmptyEntries));

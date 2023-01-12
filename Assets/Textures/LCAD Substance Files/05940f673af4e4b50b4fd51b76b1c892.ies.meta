@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: bccaf138fc58c374ca817ef5df11c727
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9801397f829a1ed42984340315cbf362, type: 3}
+  iesMetaData:
+    FileFormatVersion: LM-63-2002
+    IESPhotometricType: Type C
+    IESMaximumIntensity: 1919.9
+    IESMaximumIntensityUnit: Candelas
+    Manufacturer: XAL
+    LuminaireCatalogNumber: 059-6934616P-20
+    LuminaireDescription: SONIC centric pole free standing DIRECT / INDIRECT e2 LED
+      840 P
+    LampCatalogNumber: e2 LED 840 6LJS + e2 LED 840 6LJS
+    LampDescription: 5500 lm,   36 W
+    PrefabLightType: 0
+    SpotAngle: 120
+    iesSize: 128
+    ApplyLightAttenuation: 1
+    UseIESMaximumIntensity: 1
+    CookieCompression: 2
+    LightAimAxisRotation: -90
