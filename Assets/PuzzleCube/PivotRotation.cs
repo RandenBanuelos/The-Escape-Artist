@@ -24,6 +24,7 @@ namespace TheEscapeArtist
         private bool dragging = false;
 
         private bool autoRotating = false;
+        private bool instantRotating = false;
         private Vector3 rotation;
 
         private Quaternion targetQuaternion;
@@ -43,7 +44,7 @@ namespace TheEscapeArtist
 
         private void LateUpdate()
         {
-            if (dragging && !autoRotating)
+            if (dragging && !autoRotating && !instantRotating)
             {
                 SpinSide(activeSide);
                 if (Input.GetMouseButtonUp(0))
@@ -54,7 +55,10 @@ namespace TheEscapeArtist
             }
             if (autoRotating)
             {
-                AutoRotate();
+                if (instantRotating)
+                    InstantRotate();
+                else
+                    AutoRotate();
             }
 
         }
@@ -72,13 +76,14 @@ namespace TheEscapeArtist
             localForward = Vector3.zero - side[4].transform.parent.transform.localPosition;
         }
 
-        public void StartAutoRotate(List<GameObject> side, float angle)
+        public void StartAutoRotate(List<GameObject> side, float angle, bool instantRotate)
         {
             cubeState.PickUp(side);
             Vector3 localForward = Vector3.zero - side[4].transform.parent.transform.localPosition;
             targetQuaternion = Quaternion.AngleAxis(angle, localForward) * transform.localRotation;
             activeSide = side;
             autoRotating = true;
+            instantRotating = instantRotate;
         }
 
         public void RotateToRightAngle()
@@ -146,14 +151,20 @@ namespace TheEscapeArtist
             // if within one degree, set angle to target angle and end the rotation
             if (Quaternion.Angle(transform.localRotation, targetQuaternion) <= 1)
             {
-                transform.localRotation = targetQuaternion;
-                // unparent the little cubes
-                cubeState.PutDown(activeSide, transform.parent);
-                readCube.ReadState();
-                CubeState.autoRotating = false;
-                autoRotating = false;
-                dragging = false;
+                InstantRotate();
             }
+        }
+
+        private void InstantRotate()
+        {
+            transform.localRotation = targetQuaternion;
+            // unparent the little cubes
+            cubeState.PutDown(activeSide, transform.parent);
+            readCube.ReadState();
+            CubeState.autoRotating = false;
+            autoRotating = false;
+            instantRotating = false;
+            dragging = false;
         }
 
         #endregion

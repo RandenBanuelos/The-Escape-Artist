@@ -25,24 +25,24 @@ namespace TheEscapeArtist
           "U'", "D'", "L'", "R'", "F'", "B'"
         };
 
+        private List<string> unlockMoves = new List<string>();
+
         private CubeState cubeState;
 
         private ReadCube readCube;
 
-        private Dictionary<string, string> solveStringsToAnimTriggers = new Dictionary<string, string>
+        private List<string> solvedAnimTriggers = new List<string>
         {
-            { "RUUBUULUUBBBRRRFFFURRUFFULLRDDFDDLDDBLFBLFBLFLLDBBDRRD", "OpenDiningRoom" },
-            { "UDUDUDUDURLRLRLRLRFBFBFBFBFDUDUDUDUDLRLRLRLRLBFBFBFBFB", "OpenKitchen" },
-            { "RRRRUURUFURFRRFFFFUFRUFFUUULLLDDLBDLBBBLLBDLBDDDDBBDBL", "OpenStairs" },
-            { "UBBUUBUUURUURRURRRFFFLFFLLFFFDFDDDDDLLLLLDLDDRRBRBBBBB", "OpenLibrary" },
-            { "DUDUUUDUDBRFBRFBRFRFLRFLRFLUDUDDDUDUFLBFLBFLBLBRLBRLBR", "OpenJacksonRoom" },
+            "OpenDiningRoom",
+            "OpenKitchen",
+            "OpenStairs",
+            "OpenLibrary",
+            "OpenJacksonRoom"
         };
 
         private int progressionThroughHouse = 0;
 
-        private string currentSolveString = "";
-
-        private List<string> solveStrings = new List<string>();
+        private string solvedString = "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB";
 
         private bool houseIsAnimating = false;
 
@@ -55,28 +55,37 @@ namespace TheEscapeArtist
             cubeState = FindObjectOfType<CubeState>();
             readCube = FindObjectOfType<ReadCube>();
             progressionThroughHouse = 0;
-            solveStrings = solveStringsToAnimTriggers.Keys.ToList();
-            currentSolveString = solveStrings[progressionThroughHouse];
             houseIsAnimating = false;
     }
 
     private void Update()
         {
-            if (moveList.Count > 0 && !CubeState.autoRotating && CubeState.started)
+            if (!CubeState.autoRotating && CubeState.started)
             {
-                // Do the move at the first index;
-                DoMove(moveList[0]);
-
-                // Remove the move at the first index
-                moveList.Remove(moveList[0]);
-            }
-            else
-            {  
-                string currentCubeState = cubeState.GetStateString();
-                if (currentCubeState == currentSolveString && !houseIsAnimating)
+                if (unlockMoves.Count > 0)
                 {
-                    Progress();
-                    PuzzleCubeManager.Instance.ClosePuzzleCube();
+                    DoMove(unlockMoves[0], true);
+                    unlockMoves.Remove(unlockMoves[0]);
+                }
+                else
+                {
+                    if (moveList.Count > 0)
+                    {
+                        // Do the move at the first index;
+                        DoMove(moveList[0]);
+
+                        // Remove the move at the first index
+                        moveList.Remove(moveList[0]);
+                    }
+                    else
+                    {
+                        string currentCubeState = cubeState.GetStateString();
+                        if (currentCubeState == solvedString && !houseIsAnimating)
+                        {
+                            Progress();
+                            PuzzleCubeManager.Instance.DisableAndClose();
+                        }
+                    }
                 }
             }
         }
@@ -84,6 +93,11 @@ namespace TheEscapeArtist
         #endregion
 
         #region Public Methods
+
+        public void SetUnlockMoves(List<string> moves)
+        {
+            unlockMoves = moves;
+        }
 
         public void Shuffle()
         {
@@ -101,103 +115,102 @@ namespace TheEscapeArtist
 
         #region Private Methods
 
-        private void DoMove(string move)
+        private void DoMove(string move, bool instant = false)
         {
             readCube.ReadState();
             CubeState.autoRotating = true;
             if (move == "U")
             {
-                RotateSide(cubeState.up, -90);
+                RotateSide(cubeState.up, -90, instant);
             }
             if (move == "U'")
             {
-                RotateSide(cubeState.up, 90);
+                RotateSide(cubeState.up, 90, instant);
             }
             if (move == "U2")
             {
-                RotateSide(cubeState.up, -180);
+                RotateSide(cubeState.up, -180, instant);
             }
             if (move == "D")
             {
-                RotateSide(cubeState.down, -90);
+                RotateSide(cubeState.down, -90, instant);
             }
             if (move == "D'")
             {
-                RotateSide(cubeState.down, 90);
+                RotateSide(cubeState.down, 90, instant);
             }
             if (move == "D2")
             {
-                RotateSide(cubeState.down, -180);
+                RotateSide(cubeState.down, -180, instant);
             }
             if (move == "L")
             {
-                RotateSide(cubeState.left, -90);
+                RotateSide(cubeState.left, -90, instant);
             }
             if (move == "L'")
             {
-                RotateSide(cubeState.left, 90);
+                RotateSide(cubeState.left, 90, instant);
             }
             if (move == "L2")
             {
-                RotateSide(cubeState.left, -180);
+                RotateSide(cubeState.left, -180, instant);
             }
             if (move == "R")
             {
-                RotateSide(cubeState.right, -90);
+                RotateSide(cubeState.right, -90, instant);
             }
             if (move == "R'")
             {
-                RotateSide(cubeState.right, 90);
+                RotateSide(cubeState.right, 90, instant);
             }
             if (move == "R2")
             {
-                RotateSide(cubeState.right, -180);
+                RotateSide(cubeState.right, -180, instant);
             }
             if (move == "F")
             {
-                RotateSide(cubeState.front, -90);
+                RotateSide(cubeState.front, -90, instant);
             }
             if (move == "F'")
             {
-                RotateSide(cubeState.front, 90);
+                RotateSide(cubeState.front, 90, instant);
             }
             if (move == "F2")
             {
-                RotateSide(cubeState.front, -180);
+                RotateSide(cubeState.front, -180, instant);
             }
             if (move == "B")
             {
-                RotateSide(cubeState.back, -90);
+                RotateSide(cubeState.back, -90, instant);
             }
             if (move == "B'")
             {
-                RotateSide(cubeState.back, 90);
+                RotateSide(cubeState.back, 90, instant);
             }
             if (move == "B2")
             {
-                RotateSide(cubeState.back, -180);
+                RotateSide(cubeState.back, -180, instant);
             }
         }
 
-        private void RotateSide(List<GameObject> side, float angle)
+        private void RotateSide(List<GameObject> side, float angle, bool instant)
         {
             // Automatically rotate the side by the angle
             PivotRotation pr = side[4].transform.parent.GetComponent<PivotRotation>();
-            pr.StartAutoRotate(side, angle);
+            pr.StartAutoRotate(side, angle, instant);
         }
 
         private void Progress()
         {
             houseIsAnimating = true;
-            houseAnimator.SetTrigger(solveStringsToAnimTriggers[currentSolveString]);
+            houseAnimator.SetTrigger(solvedAnimTriggers[progressionThroughHouse]);
             Invoke(nameof(ClearHouseAnimatorTrigger), .1f);           
         }
 
         private void ClearHouseAnimatorTrigger()
         {
-            houseAnimator.ResetTrigger(solveStringsToAnimTriggers[currentSolveString]);
+            houseAnimator.ResetTrigger(solvedAnimTriggers[progressionThroughHouse]);
             progressionThroughHouse += 1;
-            currentSolveString = solveStrings[progressionThroughHouse];
             houseIsAnimating = false;
         }
 

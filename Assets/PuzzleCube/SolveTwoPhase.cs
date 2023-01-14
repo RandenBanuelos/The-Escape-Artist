@@ -70,7 +70,7 @@ namespace TheEscapeArtist
             // convert the solved moves from a string to a list
             List<string> solutionList = StringToList(solution);
 
-            //Automate the list
+            // Automate the list
             Automate.moveList = solutionList;
         }
 

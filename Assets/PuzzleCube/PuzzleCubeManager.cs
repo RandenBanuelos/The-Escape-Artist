@@ -8,6 +8,8 @@ namespace TheEscapeArtist
     {
         #region Private Serializable Fields
 
+        [SerializeField] private List<GameObject> cubes = new List<GameObject>();
+
         [SerializeField] private GameObject puzzleCubeHolder;
 
         [SerializeField] private GameObject puzzleCubeCamera;
@@ -23,6 +25,12 @@ namespace TheEscapeArtist
         #region Private Fields
 
         public bool PuzzleCubeIsOpen { get; private set; }
+
+        private GameObject currentCube;
+
+        private int currentCubeIndex = 0;
+
+        private Automate automate;
 
         #endregion
 
@@ -46,6 +54,13 @@ namespace TheEscapeArtist
             }
         }
 
+        private void Start()
+        {
+            currentCubeIndex = 0;
+            currentCube = cubes[currentCubeIndex];
+            automate = puzzleCubeHolder.GetComponentInChildren<Automate>();
+        }
+
         #endregion
 
         #region Public Methods
@@ -59,6 +74,19 @@ namespace TheEscapeArtist
             puzzleCubeCanvas.SetActive(true);
             puzzleCubeImage.SetActive(true);
             Cursor.lockState = CursorLockMode.Confined;
+        }
+
+        public void SendMoves(List<string> movesToSend)
+        {
+            automate.SetUnlockMoves(movesToSend);
+        }
+
+        public void DisableAndClose()
+        {
+            currentCube.layer = LayerMask.NameToLayer("Default");
+            currentCubeIndex = Mathf.Clamp(currentCubeIndex += 1, 0, cubes.Count - 1);
+            currentCube = cubes[currentCubeIndex];
+            ClosePuzzleCube();
         }
 
         public void ClosePuzzleCube()
