@@ -12,9 +12,6 @@ GameObject:
   - component: {fileID: 9146385889933684288}
   - component: {fileID: 1818875042401985063}
   - component: {fileID: 9147486466603984164}
-  - component: {fileID: 2152018571251911056}
-  - component: {fileID: 8372162533124069459}
-  - component: {fileID: 3248903826783907818}
   m_Layer: 0
   m_Name: PFB_Sofa
   m_TagString: Untagged
@@ -99,44 +96,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.84233993, y: 0.44194055, z: 1.8903673}
-  m_Center: {x: 0.04145068, y: 0.22097033, z: -0.0021667182}
---- !u!65 &2152018571251911056
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627562102878768042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.17906375, y: 0.9621643, z: 1.9293833}
-  m_Center: {x: -0.29885828, y: 0.4810822, z: 0.00000035762787}
---- !u!65 &8372162533124069459
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627562102878768042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5865686, y: 0.16014099, z: 0.16064186}
-  m_Center: {x: 0.08263612, y: 0.47457147, z: -0.88437057}
---- !u!65 &3248903826783907818
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627562102878768042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5865686, y: 0.16014099, z: 0.16064186}
-  m_Center: {x: 0.08263612, y: 0.47457147, z: 0.88}
+  m_Size: {x: 0.84233993, y: 0.94692516, z: 1.8903673}
+  m_Center: {x: 0.041450687, y: 0.47346085, z: -0.0021666891}

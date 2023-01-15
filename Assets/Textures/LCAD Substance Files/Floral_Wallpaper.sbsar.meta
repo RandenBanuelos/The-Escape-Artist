@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cdec6804b77cfc74b98c45b102f3eff4
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 317fc6986b6a4104886cdcbb02f4b70d, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Textures/LCAD Substance Files/Floral_Wallpaper.sbsar

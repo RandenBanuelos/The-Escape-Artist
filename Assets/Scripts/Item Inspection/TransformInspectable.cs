@@ -34,7 +34,7 @@ namespace TheEscapeArtist
 
         #endregion
 
-        #region Private Field
+        #region Private Fields
 
         private List<TransformInspectableSettings> originalAdjustments = new List<TransformInspectableSettings>();
 
@@ -45,6 +45,8 @@ namespace TheEscapeArtist
         private Outline outline;
 
         private bool alreadyPlayed = false;
+
+        private bool flipAnim = false;
 
         #endregion
 
@@ -69,11 +71,13 @@ namespace TheEscapeArtist
                 originalAdjustments.Add(newSettings);
             }
 
-            buttonAnim = GetComponentInParent<Animator>();
+            // buttonAnim = GetComponentInParent<Animator>();
 
             outline = GetComponent<Outline>();
 
             isBeingPressed = false;
+
+            flipAnim = false;
         }
 
         public override void OnInteract()
@@ -86,8 +90,8 @@ namespace TheEscapeArtist
                 gameObject.layer = LayerMask.NameToLayer("Default");
                 outline.OutlineWidth = 0f;
 
-                if (buttonAnim)
-                    buttonAnim.SetTrigger("PressButton");
+                // if (buttonAnim)
+                //    buttonAnim.SetTrigger("PressButton");
 
                 if (sfxSource)
                     sfxSource.Play();
@@ -103,14 +107,14 @@ namespace TheEscapeArtist
                     CameraShaker.Instance.ShakeOnce(ShakeMagnitude, 4f, .1f, ShakeDuration);
                 }
 
-                if (buttonAnim)
+                /*if (buttonAnim)
                 {
                     Invoke("ClearTrigger('PressButton')", 1f);
-                }
+                }*/
 
                 if (pressDelay > 0)
                 {
-                    Invoke(nameof(UnpressButton), pressDelay);
+                    Invoke(nameof(ResetInteractable), pressDelay);
                 }
 
                 for (int i = 0; i < objectsToAdjust.Count; i++)
@@ -118,37 +122,21 @@ namespace TheEscapeArtist
                     TransformInspectableSettings adjustment = objectsToAdjust[i];
                     TransformInspectableSettings original = originalAdjustments[i];
 
-                    Transform adjustCache = adjustment.itemToAdjust;
-
-                    if (adjustCache.localPosition - adjustment.positionAdjustment != Vector3.zero) // Adjust in secondary position
+                    if (!flipAnim) // Adjust to secondary position
                     {
                         adjustment.itemToAdjust.DOLocalMove(adjustment.positionAdjustment, adjustment.positionTime);
-                    }
-                    else
-                    {
-                        adjustment.itemToAdjust.DOLocalMove(original.positionAdjustment, adjustment.positionTime);
-                    }
-
-                    if (adjustCache.localEulerAngles - adjustment.rotationAdjustment != Vector3.zero) // Adjust in secondary rotation
-                    {
-                        Debug.Log($"Adjsutment: Rotating to {adjustment.rotationAdjustment}");
                         adjustment.itemToAdjust.DOLocalRotate(adjustment.rotationAdjustment, adjustment.rotationTime);
-                    }
-                    else
-                    {
-                        Debug.Log($"Original: Rotating to {original.rotationAdjustment}");
-                        adjustment.itemToAdjust.DOLocalRotate(original.rotationAdjustment, adjustment.rotationTime);
-                    }
-
-                    if (adjustCache.localScale - adjustment.scaleAdjustment != Vector3.zero) // Adjust in secondary scale
-                    {
                         adjustment.itemToAdjust.DOScale(adjustment.scaleAdjustment, adjustment.scaleTime);
                     }
                     else
                     {
+                        adjustment.itemToAdjust.DOLocalMove(original.positionAdjustment, adjustment.positionTime);
+                        adjustment.itemToAdjust.DOLocalRotate(original.rotationAdjustment, adjustment.rotationTime);
                         adjustment.itemToAdjust.DOScale(original.scaleAdjustment, adjustment.scaleTime);
                     }
                 }
+
+                flipAnim = !flipAnim;
             }
         }
 
@@ -157,16 +145,18 @@ namespace TheEscapeArtist
             buttonAnim.ResetTrigger(triggerName);
         }
 
-        private void UnpressButton()
+        private void ResetInteractable()
         {
-            buttonAnim.SetTrigger("UnpressButton");
+            // buttonAnim.SetTrigger("UnpressButton");
+
             gameObject.layer = LayerMask.NameToLayer("Interactable");
 
             if (sfxSource)
                 sfxSource.Stop();
-            
+
             isBeingPressed = false;
-            Invoke("ClearTrigger('UnpressButton')", 1f);
+
+            // Invoke("ClearTrigger('UnpressButton')", 1f);
         }
     }
 }
