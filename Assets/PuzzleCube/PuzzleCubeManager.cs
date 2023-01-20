@@ -10,6 +10,10 @@ namespace TheEscapeArtist
 
         [SerializeField] private List<GameObject> cubes = new List<GameObject>();
 
+        [SerializeField] private List<InventoryItem> algorithms = new List<InventoryItem>();
+
+        [SerializeField] private GameObject solveButton;
+
         [SerializeField] private GameObject puzzleCubeHolder;
 
         [SerializeField] private GameObject puzzleCubeCamera;
@@ -31,6 +35,12 @@ namespace TheEscapeArtist
         private int currentCubeIndex = 0;
 
         private Automate automate;
+
+        private bool foundAlgorithm = false;
+
+        private InventoryManager inventory;
+
+        private InventoryItem currentAlgorithm;
 
         #endregion
 
@@ -59,6 +69,22 @@ namespace TheEscapeArtist
             currentCubeIndex = 0;
             currentCube = cubes[currentCubeIndex];
             automate = puzzleCubeHolder.GetComponentInChildren<Automate>();
+            solveButton.SetActive(false);
+            foundAlgorithm = false;
+            inventory = InventoryManager.Instance;
+            currentAlgorithm = algorithms[currentCubeIndex];
+        }
+
+        private void Update()
+        {
+            if (!foundAlgorithm)
+            {
+                if (inventory.IsInInventory(currentAlgorithm))
+                {
+                    solveButton.SetActive(true);
+                    foundAlgorithm = true;
+                }
+            }
         }
 
         #endregion
@@ -86,6 +112,9 @@ namespace TheEscapeArtist
             currentCube.layer = LayerMask.NameToLayer("Default");
             currentCubeIndex = Mathf.Clamp(currentCubeIndex += 1, 0, cubes.Count - 1);
             currentCube = cubes[currentCubeIndex];
+            currentAlgorithm = algorithms[currentCubeIndex];
+            foundAlgorithm = false;
+            solveButton.SetActive(false);
             ClosePuzzleCube();
         }
 
