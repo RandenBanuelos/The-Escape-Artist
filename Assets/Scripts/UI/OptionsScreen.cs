@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.PostProcessing;
 using TMPro;
 
 namespace TheEscapeArtist
@@ -13,10 +14,20 @@ namespace TheEscapeArtist
     {
         #region Private Serializable Fields
 
+        [Header("References")]
+        [SerializeField] private PostProcessVolume ppVolume;
+
+        [SerializeField] private GameObject graphicsObject, audioObject;
+
+        [SerializeField] private TMP_Text switchGraphicsAudioText;
+
+
         [Header("Graphics")]
         [SerializeField] private TMP_Text resolutionLabel;
 
         [SerializeField] private Toggle fullscreenToggle, vsyncToggle;
+
+        [SerializeField] private Toggle postProcessingToggle, motionBlurToggle;
 
         [SerializeField] private List<ResolutionItem> resolutions = new List<ResolutionItem>();
 
@@ -34,12 +45,20 @@ namespace TheEscapeArtist
 
         private int selectedResolution;
 
+        private MotionBlur motionBlur;
+
         #endregion
 
         #region MonoBehaviour Callbacks
 
         private void Start()
         {
+            ppVolume.profile.TryGetSettings(out motionBlur);
+
+            postProcessingToggle.isOn = ppVolume.weight == 1;
+
+            motionBlurToggle.isOn = motionBlur.active;
+
             fullscreenToggle.isOn = Screen.fullScreen;
 
             vsyncToggle.isOn = QualitySettings.vSyncCount == 0 ? false : true;
@@ -115,6 +134,10 @@ namespace TheEscapeArtist
             QualitySettings.vSyncCount = vsyncToggle.isOn ? 1 : 0;
 
             Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, fullscreenToggle.isOn);
+
+            ppVolume.weight = postProcessingToggle.isOn ? 1 : 0;
+
+            motionBlur.active = motionBlurToggle.isOn ? true : false;
         }
 
         public void SetMasterVolume()
@@ -136,6 +159,22 @@ namespace TheEscapeArtist
             sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
             mainMixer.SetFloat("SFXVolume", sfxSlider.value);
             PlayerPrefs.SetFloat("SFXVolume", sfxSlider.value);
+        }
+
+        public void SwitchGraphicsAudio()
+        {
+            if (graphicsObject.activeSelf == true)
+            {
+                graphicsObject.SetActive(false);
+                audioObject.SetActive(true);
+                switchGraphicsAudioText.text = "<< Graphics";
+            }
+            else
+            {
+                graphicsObject.SetActive(true);
+                audioObject.SetActive(false);
+                switchGraphicsAudioText.text = "Audio >>";
+            }
         }
 
         #endregion

@@ -13,6 +13,8 @@ namespace TheEscapeArtist
 
         [SerializeField] private float voiceClipDelay = 0f;
 
+        [SerializeField] private FrontDoor doorToOpen;
+
         #endregion
 
         #region Private Fields
@@ -48,6 +50,8 @@ namespace TheEscapeArtist
                 vaManager = VoiceActingManager.Instance;
 
             vaManager.Say(voiceClip);
+            if (doorToOpen)
+                doorToOpen.OpenDoor();
         }
 
         #endregion
