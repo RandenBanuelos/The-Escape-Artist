@@ -30,10 +30,13 @@ namespace TheEscapeArtist
 
         private void OnTriggerEnter(Collider other)
         {
-            trigger.enabled = false;
-            HideRevealManager.Instance.AddHideRevealChange(this.gameObject.name, false);
-            Debug.Log($"TooltipTrigger.OnTriggerEnter(): {textToDisplay}");
-            Tooltip.Instance.AddTooltipToQueue(textToDisplay, tooltipDuration);
+            if (other.tag == "Player")
+            {
+                trigger.enabled = false;
+                HideRevealManager.Instance.AddHideRevealChange(this.gameObject.name, false);
+                Debug.Log($"TooltipTrigger.OnTriggerEnter(): {textToDisplay}");
+                Tooltip.Instance.AddTooltipToQueue(textToDisplay, tooltipDuration);
+            }
         }
 
         #endregion

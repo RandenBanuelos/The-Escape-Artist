@@ -107,16 +107,26 @@ namespace TheEscapeArtist
                     {
                         interactionData.Interactable = interactable;
                         uiPanel.SetTooltip(interactionData.Interactable.TooltipMessage);
-                        interactionData.Interactable.InteractOutline.OutlineWidth = highlightedOutlineWidth;
-                        interactionData.Interactable.InteractOutline.OutlineColor = highlightedColor;
+
+                        Outline interactOutline = interactionData.Interactable.InteractOutline;
+                        if (interactOutline)
+                        {
+                            interactOutline.OutlineWidth = highlightedOutlineWidth;
+                            interactOutline.OutlineColor = highlightedColor;
+                        }
                     }
                     else
                     {
                         if (!interactionData.IsSameInteractable(interactable))
                             interactionData.Interactable = interactable;
                             uiPanel.SetTooltip(interactionData.Interactable.TooltipMessage);
-                            interactionData.Interactable.InteractOutline.OutlineWidth = highlightedOutlineWidth;
-                            interactionData.Interactable.InteractOutline.OutlineColor = highlightedColor;
+
+                            Outline interactOutline = interactionData.Interactable.InteractOutline;
+                            if (interactOutline)
+                            {
+                                interactOutline.OutlineWidth = highlightedOutlineWidth;
+                                interactOutline.OutlineColor = highlightedColor;
+                            }
                     }
                 }
             }
@@ -124,8 +134,12 @@ namespace TheEscapeArtist
             {
                 if (!interactionData.IsEmpty())
                 {
-                    interactionData.Interactable.InteractOutline.OutlineWidth = defaultOutlineWidth;
-                    interactionData.Interactable.InteractOutline.OutlineColor = Color.white;
+                    Outline interactOutline = interactionData.Interactable.InteractOutline;
+                    if (interactOutline)
+                    {
+                        interactOutline.OutlineWidth = defaultOutlineWidth;
+                        interactOutline.OutlineColor = Color.white;
+                    }
                 }
 
                 uiPanel.ResetUI();

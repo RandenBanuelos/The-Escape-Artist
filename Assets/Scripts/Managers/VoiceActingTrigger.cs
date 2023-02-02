@@ -35,9 +35,12 @@ namespace TheEscapeArtist
 
         private void OnTriggerEnter(Collider other)
         {
-            trigger.enabled = false;
-            HideRevealManager.Instance.AddHideRevealChange(this.gameObject.name, false);
-            Invoke(nameof(PlayVoiceClip), voiceClipDelay);
+            if (other.tag == "Player")
+            {
+                trigger.enabled = false;
+                HideRevealManager.Instance.AddHideRevealChange(this.gameObject.name, false);
+                Invoke(nameof(PlayVoiceClip), voiceClipDelay);
+            }
         }
 
         #endregion

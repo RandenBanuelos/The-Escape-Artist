@@ -304,6 +304,11 @@ namespace TheEscapeArtist
             }
         }
 
+        public void SetHouse(GameObject newHouse)
+        {
+            house = newHouse;
+        }
+
         #endregion
 
         #region Private Methods
