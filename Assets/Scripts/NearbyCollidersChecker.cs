@@ -11,6 +11,14 @@ namespace TheEscapeArtist
             // The object that entered the sphere is from the past
             if (other.gameObject.tag == "Past")
             {
+                FireDissolver fireDissolver = other.gameObject.GetComponent<FireDissolver>();
+                if (fireDissolver != null)
+                {
+                    Debug.Log("--Enabling fire...");
+                    fireDissolver.ToggleFire(true);
+                    return;
+                }
+
                 Debug.Log($"NearbyCollidersChecker.OnTriggerEnter: Enabling object from past - {other.gameObject.name}");
                 other.isTrigger = false;
             }
@@ -18,6 +26,14 @@ namespace TheEscapeArtist
             // The object that entered the sphere is from the present
             else if (other.gameObject.tag == "Present")
             {
+                FireDissolver fireDissolver = other.gameObject.GetComponent<FireDissolver>();
+                if (fireDissolver != null)
+                {
+                    Debug.Log("--Disabling fire...");
+                    fireDissolver.ToggleFire(false);
+                    return;
+                }
+
                 Debug.Log($"NearbyCollidersChecker.OnTriggerEnter: Disabling object from present - {other.gameObject.name}");
                 other.isTrigger = true;
             }
@@ -28,6 +44,14 @@ namespace TheEscapeArtist
             // The object that left the sphere is from the past
             if (other.gameObject.tag == "Past")
             {
+                FireDissolver fireDissolver = other.gameObject.GetComponent<FireDissolver>();
+                if (fireDissolver != null)
+                {
+                    Debug.Log("--Disabling fire...");
+                    fireDissolver.ToggleFire(false);
+                    return;
+                }
+
                 Debug.Log($"NearbyCollidersChecker.OnTriggerExit: Disabling object from past - {other.gameObject.name}");
                 other.isTrigger = true;
             }
@@ -35,6 +59,14 @@ namespace TheEscapeArtist
             // The object that left the sphere is from the present
             else if (other.gameObject.tag == "Present")
             {
+                FireDissolver fireDissolver = other.gameObject.GetComponent<FireDissolver>();
+                if (fireDissolver != null)
+                {
+                    Debug.Log("--Enabling fire...");
+                    fireDissolver.ToggleFire(true);
+                    return;
+                }
+
                 Debug.Log($"NearbyCollidersChecker.OnTriggerExit: Enabling object from present - {other.gameObject.name}");
                 other.isTrigger = false;
             }

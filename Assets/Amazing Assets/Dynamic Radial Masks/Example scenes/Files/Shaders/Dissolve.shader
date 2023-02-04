@@ -5,9 +5,11 @@
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo", 2D) = "white" {}
 		_Metallic("Metallic", Range( 0 , 1)) = 0
+		_MetallicMap("Metallic Map", 2D) = "black" {}
 		_Smoothness("Smoothness", Range( 0 , 1)) = 0
-		_SmoothnessMap("Smoothness Map", 2D) = "white" {}
-		_Normal("Normal Map", 2D) = "white" {}
+		_SmoothnessMap("Smoothness Map", 2D) = "black" {}
+		_Normal("Normal Map", 2D) = "black" {}
+		_AOMap("AO Map", 2D) = "black" {}
 		_AlphaCutoff("Alpha Cutoff", Range(0 , 1)) = 0
 
 		[HDR]_EdgeEmission("Edge Emission", Color) = (1,1,1,1)
@@ -34,7 +36,9 @@
 		half _Smoothness;
 		sampler2D _SmoothnessMap;
 		half _Metallic;
+		sampler2D _MetallicMap;
 		sampler2D _Normal;
+		sampler2D _AOMap;
 
 		fixed4 _EdgeEmission;
 		sampler2D _DissolveNoise;
@@ -45,7 +49,9 @@
 		{
 			float2 uv_MainTex;
 			float2 uv_SmoothnessMap;
+			float2 uv_MetallicMap;
 			float2 uv_Normal;
+			float2 uv_AOMap;
 			float2 uv_DissolveNoise;
 			float3 worldPos;
 		};
@@ -69,11 +75,16 @@
 			o.Alpha = 1;
 
 			// Metallic and smoothness come from slider variables
-			o.Metallic = _Metallic;
+			fixed4 m = tex2D(_MetallicMap, IN.uv_MetallicMap) * _Metallic;
+			o.Metallic = m.rgb;
 
 			fixed4 s = tex2D(_SmoothnessMap, IN.uv_SmoothnessMap) * _Smoothness;
 			o.Smoothness = s.a;
+
 			o.Normal = UnpackNormal(tex2D(_Normal, IN.uv_Normal));
+
+			fixed4 ao = tex2D(_AOMap, IN.uv_AOMap);
+			o.Occlusion = ao.rgb;
 
 			o.Emission = _EdgeEmission * mask;
 		}

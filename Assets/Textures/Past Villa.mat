@@ -10,8 +10,7 @@ Material:
   m_Name: Past Villa
   m_Shader: {fileID: 4800000, guid: 70ef48c49f8bb994a88a1550d326460f, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _INVERTDISSOLVE_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -21,6 +20,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AOMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -53,6 +56,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MetallicMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Normal:
         m_Texture: {fileID: 2800000, guid: 4a2dca3a6b2272349b0c4239f2a4060a, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -79,7 +86,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _InvertDissolve: 1
+    - _InvertDissolve: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

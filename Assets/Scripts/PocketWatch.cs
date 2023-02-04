@@ -110,6 +110,11 @@ namespace TheEscapeArtist
             }
         }
 
+        public void SetWatchRange(float newRange)
+        {
+            watchRange = newRange;
+        }
+
         public bool IsActive => isActive;
 
         #endregion
