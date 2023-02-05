@@ -26,7 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -82.5, y: 43, z: -44}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8104446088801640174}
   - {fileID: 2898886857643184203}
@@ -527,10 +527,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villa1_Floor_Mid_A (79)
       objectReference: {fileID: 0}
-    - target: {fileID: 182084, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_TagString
-      value: Past
-      objectReference: {fileID: 0}
     - target: {fileID: 480730, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
       propertyPath: m_RootOrder
       value: 228
@@ -567,10 +563,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dee5223d7f5e5cd4b8ecc1c24765eda3, type: 2}
-    - target: {fileID: 6553240, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
 --- !u!4 &305677599240976277 stripped
@@ -1993,10 +1985,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villa1_Floor_Mid_A (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 182084, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_TagString
-      value: Past
-      objectReference: {fileID: 0}
     - target: {fileID: 480730, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
       propertyPath: m_RootOrder
       value: 74
@@ -2033,10 +2021,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dee5223d7f5e5cd4b8ecc1c24765eda3, type: 2}
-    - target: {fileID: 6553240, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
 --- !u!4 &2113404637419165590 stripped
@@ -3421,10 +3405,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villa1_Floor_Mid_A (58)
       objectReference: {fileID: 0}
-    - target: {fileID: 182084, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_TagString
-      value: Past
-      objectReference: {fileID: 0}
     - target: {fileID: 480730, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -3461,10 +3441,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dee5223d7f5e5cd4b8ecc1c24765eda3, type: 2}
-    - target: {fileID: 6553240, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
 --- !u!4 &2113404637720804331 stripped
@@ -10374,10 +10350,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villa1_Floor_Mid_A (77)
       objectReference: {fileID: 0}
-    - target: {fileID: 182084, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_TagString
-      value: Past
-      objectReference: {fileID: 0}
     - target: {fileID: 480730, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10521,8 +10493,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.884827, y: 4.3565216, z: 3.3401463}
-  m_Center: {x: 0.1257999, y: 5.3948812, z: 2.8397675}
+  m_Size: {x: 4.884827, y: 4.3565216, z: 2.6455624}
+  m_Center: {x: 0.1257999, y: 5.3948812, z: 3.1870594}
 --- !u!1001 &2113404638905507564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11150,10 +11122,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villa1_Floor_Mid_A (18)
       objectReference: {fileID: 0}
-    - target: {fileID: 182084, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_TagString
-      value: Past
-      objectReference: {fileID: 0}
     - target: {fileID: 480730, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -11190,10 +11158,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dee5223d7f5e5cd4b8ecc1c24765eda3, type: 2}
-    - target: {fileID: 6553240, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
 --- !u!4 &2113404639002776791 stripped
@@ -13942,10 +13906,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villa1_Floor_Mid_A (33)
       objectReference: {fileID: 0}
-    - target: {fileID: 182084, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_TagString
-      value: Past
-      objectReference: {fileID: 0}
     - target: {fileID: 480730, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
       propertyPath: m_RootOrder
       value: 236
@@ -13982,10 +13942,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dee5223d7f5e5cd4b8ecc1c24765eda3, type: 2}
-    - target: {fileID: 6553240, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
 --- !u!4 &3482213081808855430 stripped
@@ -14078,10 +14034,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villa1_Floor_Mid_A (76)
       objectReference: {fileID: 0}
-    - target: {fileID: 182084, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_TagString
-      value: Past
-      objectReference: {fileID: 0}
     - target: {fileID: 480730, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
       propertyPath: m_RootOrder
       value: 227
@@ -14118,10 +14070,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dee5223d7f5e5cd4b8ecc1c24765eda3, type: 2}
-    - target: {fileID: 6553240, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
 --- !u!4 &3748285838541663431 stripped
@@ -15288,10 +15236,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villa1_Floor_Mid_A (31)
       objectReference: {fileID: 0}
-    - target: {fileID: 182084, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_TagString
-      value: Past
-      objectReference: {fileID: 0}
     - target: {fileID: 480730, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
       propertyPath: m_RootOrder
       value: 235
@@ -15328,10 +15272,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dee5223d7f5e5cd4b8ecc1c24765eda3, type: 2}
-    - target: {fileID: 6553240, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
 --- !u!4 &6723598199228515189 stripped
