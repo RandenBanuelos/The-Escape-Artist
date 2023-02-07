@@ -67,7 +67,7 @@ namespace TheEscapeArtist
 
             foreach (ScreenObject screenObject in screensToMatch)
             {
-                Debug.Log($"{screenObject.screen}:{correctScreens[screenObject.screen]}-->{screenObject.channel}");
+                // Debug.Log($"{screenObject.screen}:{correctScreens[screenObject.screen]}-->{screenObject.channel}");
                 correctScreens[screenObject.screen] = screenObject.channel;
             }
         }

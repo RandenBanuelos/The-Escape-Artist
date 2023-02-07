@@ -55,10 +55,6 @@ namespace TheEscapeArtist
             stereoscope.SetActive(false);
             pocketWatch.SetActive(true);
 
-            /*if (flashlight == null)
-                flashlight = GameObject.FindGameObjectWithTag("Flashlight");
-            flashlight.SetActive(true);*/
-
             lockerDoor.SetTrigger("OpenDoor");
             yield return new WaitForSeconds(2f);
 
